@@ -1,0 +1,39 @@
+﻿AIHE: 
+Plaseerausten tekijä
+Ohjelma tekee pöytäjuhlien istumajärjestyksen vieraslistan ja pöytien koon perusteella.
+
+KÄYTTÄJÄ: 
+Juhlien järjestäjä
+
+TOIMINTA: 
+
+1. 
+Pyydetään pöytien koot (Vain suorakulmaisia pöytiä)
+
+2. 
+Syötetään vieraslistan, jossa on osallistujien nimet, sukupuoli ja avec
+
+Periaatteessa ohjelman pitäisi toimia niin, että järjestäjä syöttää osallistujien tiedot, mutta koska tällaista voi olla työlästä testata, voisi ohjelma ottaa vieraslistan valmiista tekstitiedostosta. Reaalimaailmassa ohjelma olisi näin rakennettu tietylle porukalle, joka pitää pöytäjuhlia eri paikoissa erikokoisissa pöytäryhmissä. 
+
+3. 
+Ihmiset järjestetään pöytiin
+
+Mies – nainen – mies ja toisella puolen pöytää päinvastoin
+Avecit ovat vierekkäin (mies naisen vasemmalla puolella)
+Muuten sijoitukset tehdään arpomalla
+Ongelmia:
+ - Jos miehiä ja naisia on eri määrä, osan pitää ”vaihtaa sukupuolta”
+ - Jos vieraita ei ole tasan pöytien kokoon verrattuna, tulee tyhjiä paikkoja
+	(Tyhjät tuolit olisi hyvä olla pöytien päissä)
+
+4. 
+Tulos kuvataan pöytäkarttana
+
+Voiko karttaa muuttaa?
+
+
+
+Ohjelman voisi ensin toteutta hyvin suppeana niin, että se vain arpoo ihmiset pöytiin mies-nainen-mies -periaatteella ja lisätä plaseerauksen käytännön järkevyyttä sen mukaan kuin ehtii.
+
+
+
