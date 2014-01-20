@@ -1,4 +1,4 @@
-package plaseeraus.plaseeraus;
+package Vieraslistatiedosto;
 
 public class vieras {
     private String etunimi;
@@ -9,6 +9,17 @@ public class vieras {
         this.etunimi = etunimi;
         this.sukunimi = sukunimi;
         this.sukupuoli = sukupuoli;
+    }
+    
+    //getterit nimi- ja sukupuolitiedoille
+    public String getEtunimi(){
+        return this.etunimi;
+    }
+    public String getSukunimi(){
+        return this.sukunimi;
+    }  
+    public String getSukupuoli(){
+        return this.sukupuoli;
     }
     
 }
