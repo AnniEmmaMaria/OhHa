@@ -1,28 +1,29 @@
-package Vieraslistatiedosto;
+package plaseeraus.plaseeraus;
 
+import plaseeraus.plaseeraus.Vieras;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class vieraslistanLukija {
+public class VieraslistanLukija {
     //Määritetään luettava vieraslista ja sille lukija
     File vieraslista = new File("src\\main\\java\\Vieraslistatiedosto\\vieraslista.txt");
     //Scanner listanLukija = new Scanner(vieraslista);
     
-    //Metodi tekee yhdestä vieraslistan rivistä vieras-olion
+    //Metodi tekee yhdestä vieraslistan rivistä Vieras-olion
     public static void luoVierasOlio(){
         String etunimi = "Mato";
         String sukunimi = "Matala";
         String sukupuoli = "m";
         
-        vieras uusiVieras = new vieras(etunimi, sukunimi, sukupuoli);
+        Vieras uusiVieras = new Vieras(etunimi, sukunimi, sukupuoli);
     }
     
-    //Metodi lisää vieras-olion ArrayListiin vieraista
-    public static void lisaaListaan(vieras uusiVieras){
+    //Metodi lisää Vieras-olion ArrayListiin vieraista
+    public static void lisaaListaan(Vieras uusiVieras){
     //Ensin pitää luoda naisille ja miehille ArrayListit (oikeasti muualla!!)
-    ArrayList<vieras> naiset = new ArrayList<>();
-    ArrayList<vieras> miehet = new ArrayList<>();
+    ArrayList<Vieras> naiset = new ArrayList<>();
+    ArrayList<Vieras> miehet = new ArrayList<>();
     
         if(uusiVieras.getSukupuoli().equals("n")){
             naiset.add(uusiVieras);

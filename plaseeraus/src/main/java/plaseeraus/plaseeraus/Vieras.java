@@ -1,11 +1,11 @@
-package Vieraslistatiedosto;
+package plaseeraus.plaseeraus;
 
-public class vieras {
+public class Vieras {
     private String etunimi;
     private String sukunimi;
     private String sukupuoli;
     
-    public vieras (String etunimi, String sukunimi, String sukupuoli){
+    public Vieras (String etunimi, String sukunimi, String sukupuoli){
         this.etunimi = etunimi;
         this.sukunimi = sukunimi;
         this.sukupuoli = sukupuoli;
@@ -21,5 +21,9 @@ public class vieras {
     public String getSukupuoli(){
         return this.sukupuoli;
     }
-    
+    //toString vieraan nimen tulostukseen
+    @Override
+    public String toString(){
+        return etunimi + sukunimi;
+    }
 }
