@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class VieraslistanLukija {
 
-    File vieraslista;       //luettava vieraslista
-    Scanner listanLukija;   //sen lukija
-    KaikkiVieraat kaikki;
+    File vieraslista;           //luettava vieraslista
+    Scanner listanLukija;       //sen lukija
+    Vieraslista listaVieraista; //lista johon vieraat tallennetaan
     
-    public VieraslistanLukija() {
+    public VieraslistanLukija(Vieraslista mihinListaanLuetaan) {
         vieraslista = new File("vieraslista.txt");
 
         //Vieraslistan lukijan teossa varmistetaan, että tekstitiedosto on olemassa
@@ -20,19 +20,19 @@ public class VieraslistanLukija {
             System.out.println("Tiedostoa ei löytynyt");
         }
         
-        kaikki = new KaikkiVieraat();
+        listaVieraista = mihinListaanLuetaan;
     }
 
+    
+    
     //Luetaan tiedoston rivit yksi kerrallaan ja tehdään riveistä Vieras-oliot
     //Lisätään oliot KaikkiVieraat-luokkaan
-    public void luoRiveistaOliot() {
-
-
+    public void luoRiveistaOliotListaksi() {
 
         while (listanLukija.hasNextLine()) {
             String rivi = listanLukija.nextLine();
             Vieras uusiVieras = luoTekstirivistaVierasOlio(rivi);
-            kaikki.lisaaVierasListaan(uusiVieras);
+            listaVieraista.lisaaVierasListalle(uusiVieras);
         }
     }
 

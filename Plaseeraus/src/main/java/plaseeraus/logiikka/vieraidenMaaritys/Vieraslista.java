@@ -1,21 +1,29 @@
 package plaseeraus.logiikka.vieraidenMaaritys;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
+public class Vieraslista {
 
-public class KaikkiVieraat {
-    private HashMap<String, Vieras> kaikki;
-    
-    public KaikkiVieraat(){
-        this.kaikki = null;
-    }
-    
-    //Lisätään vieras listaan etunimiSukunimi avaimensa kanssa
-    public void lisaaVierasListaan(Vieras uusiVieras){
-        String avain = uusiVieras.luoYksiloivaAvain();
-        kaikki.put(avain, uusiVieras);
-        
+    private ArrayList<Vieras> kaikki;   //Lista sisältää kaikki vieraat
+
+    public Vieraslista() {
+        this.kaikki = new ArrayList<>();
     }
 
+    //Lisätään vieras listaan
+    public void lisaaVierasListalle(Vieras uusiVieras) {
+        kaikki.add(uusiVieras);
+    }
+    
+    //Tulostetaan kaikkien vieraiden nimet
+    public void tulostaVieraidenNimet(){
+        for(Vieras yksiVieras:kaikki){
+            System.out.println(yksiVieras.toString());
+        }
+    }
+
+    //Montako vierasta on tulossa yhteensä
+    public Integer vierasmaara(){
+        return kaikki.size();
     }
 }

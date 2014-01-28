@@ -27,8 +27,5 @@ public class Vieras {
         return etunimi + " " + sukunimi;
     }
     
-    //HashMapia varten vieras yksilöidään EtunimiSukunimi -tyylisellä avaimella
-    public String luoYksiloivaAvain(){
-        return this.etunimi + this.sukunimi;
-    }
+    
 }
