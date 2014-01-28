@@ -5,13 +5,13 @@ import plaseeraus.logiikka.vieraidenMaaritys.Vieras;
 public class Tuoli {
     private boolean vapaa;
     private char kenelle;       // mies tai nainen
-    private int moneskoSivulla; //monesko tuoli on pöydän sillä sivulla
+    private int monesko;        //monesko tuoli on pöydässä
     private Vieras istuja;
     
     public Tuoli(char istujanSukupuoli, int monesko){
         this.vapaa = true;
         this.kenelle = istujanSukupuoli;
-        this.moneskoSivulla = monesko;
+        this.monesko = monesko;
         this.istuja = null;       
     }
     
