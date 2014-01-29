@@ -13,7 +13,7 @@ public class Plaseeraaja {
     }
     
     public void plaseeraa(Poyta poyta){
-        
+        poyta.getTuoli(1);
     }
     
     public static void arvoIstuja(){
