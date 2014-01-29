@@ -5,13 +5,12 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class VieraslistanLukija {
-
     File vieraslista;           //luettava vieraslista
     Scanner listanLukija;       //sen lukija
     Vieraslista listaVieraista; //lista johon vieraat tallennetaan
     
-    public VieraslistanLukija(Vieraslista mihinListaanLuetaan) {
-        vieraslista = new File("vieraslista.txt");
+    public VieraslistanLukija() {
+        this.vieraslista = new File("vieraslista.txt");
 
         //Vieraslistan lukijan teossa varmistetaan, että tekstitiedosto on olemassa
         try {
@@ -20,9 +19,15 @@ public class VieraslistanLukija {
             System.out.println("Tiedostoa ei löytynyt");
         }
         
-        listaVieraista = mihinListaanLuetaan;
+        listaVieraista = new Vieraslista();
     }
 
+    
+    
+    //Anna vieraslista, johon tekstitiedoston vieraat tallennettiin
+    public Vieraslista getVieraslista(){
+        return this.listaVieraista;
+    }
     
     
     //Luetaan tiedoston rivit yksi kerrallaan ja tehdään riveistä Vieras-oliot
@@ -35,6 +40,7 @@ public class VieraslistanLukija {
             listaVieraista.lisaaVierasListalle(uusiVieras);
         }
     }
+    
 
     //Luo yhdestä tekstirivistä Vieras-olion etsimällä attribuutit (etu- ja sukunimi, sukupuoli) 
     private Vieras luoTekstirivistaVierasOlio(String tekstirivi) {
