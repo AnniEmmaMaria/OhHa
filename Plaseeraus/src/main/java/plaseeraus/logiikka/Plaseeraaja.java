@@ -12,6 +12,10 @@ public class Plaseeraaja {
         lukija.luoRiveistaOliotListaksi();
     }
     
+    public void plaseeraa(Poyta poyta){
+        
+    }
+    
     public static void arvoIstuja(){
         
     }

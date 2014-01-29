@@ -9,11 +9,11 @@ public class Main {
     
     public static void main(String[] args) {
         Poyta kuudenPoyta = new Poyta(6, 1);
-        System.out.println("Tuoleja on siis " + kuudenPoyta.getTuolimaara());
         kuudenPoyta.luoTuolit();
-        Tuoli jakkara = kuudenPoyta.getTuoli(2);
-        System.out.println("tuoli tuli");
-        System.out.println(jakkara);
+        Poyta kahdenPoyta = new Poyta(2, 2);
+        
+       
+
         
 
     }
