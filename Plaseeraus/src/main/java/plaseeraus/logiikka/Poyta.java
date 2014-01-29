@@ -11,6 +11,7 @@ public class Poyta {
         this.tuolimaara = tuolimaara;
         this.moneskoSalissa = moneskoSalissa;
         this.tuolit = new ArrayList<Tuoli>();
+        
     }
     
     //getterit pöydän tietojen hakuun
@@ -21,24 +22,34 @@ public class Poyta {
         return this.moneskoSalissa;
     }
  
-
+    public void luoTuolit(){
+        Tuoli uusiTuoli = null;
+        char istujanSukupuoli = 'x';
+        int tuolinNro = 1;                //Ensimmäinen tuoli on nro 1
+        
+        while(tuolinNro <= this.tuolimaara){
+            //Parittomille tuoleille miehiä, parillisille naisia
+            if(tuolinNro % 2 != 0){     
+                istujanSukupuoli = 'm';
+            }else{
+                istujanSukupuoli = 'n';
+            }
+            
+            //Luodaan näillä uusi tuoli ja lisätään se pöytään
+            uusiTuoli = luoTuoli(istujanSukupuoli, tuolinNro);
+            this.tuolit.add(uusiTuoli);
+            
+            tuolinNro++;
+        }
+    }
     
-//    //MÄÄRITETÄÄN PÖYDÄN SIVUJEN TUOLIT. NIITÄ ON tuolimäärä/2 KAPPALETTA
-//    //Vasemmalla puolella ensimmäisessä tuolissa istuu nainen
-//    public ArrayList<Tuoli> laitaVasemmalleSivulleTuolit(){
-//        for(int i = 0; i < tuolimaara/2; i++){
-//            
-//            //Parittomilla tuoleilla on naisille paikat
-//            if(1‰2 == 0){
-//            
-//        }
-//            luoTuoli('')
-//        }
-//        return null;
-//    }
-    
+    //Yksittäisen tuolin luominen
     private Tuoli luoTuoli(char istujanSukupuoli, int monesko){
         return new Tuoli(istujanSukupuoli, monesko);
     }
     
+    //Yksittäisen tuolin tietojen hakeminen
+    public Tuoli getTuoli(int tuolinNro){
+        return this.tuolit.get(tuolinNro - 1);
+    }
 }

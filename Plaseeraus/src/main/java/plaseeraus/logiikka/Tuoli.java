@@ -30,4 +30,10 @@ public class Tuoli {
         this.vapaa = false;
     }
     
+    @Override
+    public String toString(){
+        return "Tuoli numero " + monesko + " on vapaa (" + vapaa + ") " + kenelle + ":lle";
+    } 
+          
+    
 }

@@ -8,13 +8,12 @@ public class Main {
 
     
     public static void main(String[] args) {
-        Vieraslista lista = new Vieraslista();
-        VieraslistanLukija lukija = new VieraslistanLukija(lista);
-        
-        lukija.luoRiveistaOliotListaksi();
-        System.out.println("Vieraita on: " + lista.vierasmaara());
-        System.out.println("---");
-        lista.tulostaVieraidenNimet();
+        Poyta kuudenPoyta = new Poyta(6, 1);
+        System.out.println("Tuoleja on siis " + kuudenPoyta.getTuolimaara());
+        kuudenPoyta.luoTuolit();
+        Tuoli jakkara = kuudenPoyta.getTuoli(2);
+        System.out.println("tuoli tuli");
+        System.out.println(jakkara);
         
 
     }
