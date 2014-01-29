@@ -11,7 +11,10 @@ public class Main {
         Poyta kuudenPoyta = new Poyta(6, 1);
         kuudenPoyta.luoTuolit();
         Poyta kahdenPoyta = new Poyta(2, 2);
+        kahdenPoyta.luoTuolit();
         
+        System.out.println(kuudenPoyta);
+        System.out.println(kahdenPoyta);
        
 
         

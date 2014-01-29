@@ -41,4 +41,9 @@ public class PoytaTest {
     public void poytanumeroOikein(){
         assertEquals(1, neljanPoyta.getPoydanNumero());
     }
+    
+    @Test
+    public void toStringTulostuu(){
+        assertEquals("Pöydässä on 4 tuolia ja se on salissa numero 1", neljanPoyta.toString());
+    }
 }

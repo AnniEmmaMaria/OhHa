@@ -4,25 +4,24 @@ import plaseeraus.logiikka.vieraidenMaaritys.Vieras;
 
 public class Tuoli {
     private boolean vapaa;
-    private char kenelle;       // mies tai nainen
-    private int monesko;        //monesko tuoli on pöydässä
     private Vieras istuja;
     
-    public Tuoli(char istujanSukupuoli, int monesko){
+    public Tuoli(){
         this.vapaa = true;
-        this.kenelle = istujanSukupuoli;
-        this.monesko = monesko;
         this.istuja = null;       
     }
     
-    public boolean onkoVapaa(){
+
+    //TUOLIN NYKYTILANTEEN KYSELYT
+    
+    public boolean getVapaa(){
         return this.vapaa;
     }
     
-    //Kuka istuu tässä
-    public Vieras kukaIstuu(){
+    public Vieras getIstuja(){
         return istuja;
     }
+    
     
     //Tuoli ottaa istujan ja muuttuu varatuksi
     public void otaIstuja(Vieras istuja){
@@ -32,7 +31,7 @@ public class Tuoli {
     
     @Override
     public String toString(){
-        return "Tuoli numero " + monesko + " on vapaa (" + vapaa + ") " + kenelle + ":lle";
+        return "Tuoli on vapaa (" + vapaa + ") ";
     } 
           
     

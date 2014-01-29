@@ -26,7 +26,7 @@ public class TuoliTest {
 
     @Before
     public void setUp() {
-        istuin = new Tuoli('m', 3);
+        istuin = new Tuoli();
         vili = new Vieras("Vili", "Vilperi", 'm');
     }
 
@@ -37,22 +37,22 @@ public class TuoliTest {
     //Tuolin luontiasetukset oikein?
     @Test
     public void onkoLuotaessaVapaa() {
-        assertEquals(true, istuin.onkoVapaa());
+        assertEquals(true, istuin.getVapaa());
     }
     @Test
     public void istuukoKukaanLuotaessa(){
-        assertEquals(null, istuin.kukaIstuu());
+        assertEquals(null, istuin.getIstuja());
     }
 
     //Onnistuuko istuminen?
     @Test
     public void voikoIstua(){
         istuin.otaIstuja(vili);
-        assertEquals("Vili Vilperi", istuin.kukaIstuu().toString());   
+        assertEquals("Vili Vilperi", istuin.getIstuja().toString());   
     }
     @Test
     public void varautuukoIstuessa(){
         istuin.otaIstuja(vili);
-        assertEquals(false, istuin.onkoVapaa());
+        assertEquals(false, istuin.getVapaa());
     }
 }
