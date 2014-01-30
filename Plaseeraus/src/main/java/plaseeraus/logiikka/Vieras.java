@@ -1,16 +1,18 @@
-package plaseeraus.logiikka.vieraidenMaaritys;
+package plaseeraus.logiikka;
 
 public class Vieras {
     private String etunimi;
     private String sukunimi;
     private char sukupuoli;
     private boolean plaseerattu;
+    private Vieras avec;
     
-    public Vieras (String etunimi, String sukunimi, char sukupuoli){
+    public Vieras (String etunimi, String sukunimi, char sukupuoli, Vieras avec){
         this.etunimi = etunimi;
         this.sukunimi = sukunimi;
         this.sukupuoli = sukupuoli;
         this.plaseerattu = false;
+        this.avec = null;
     }
     
     //getterit nimi- ja sukupuolitiedoille

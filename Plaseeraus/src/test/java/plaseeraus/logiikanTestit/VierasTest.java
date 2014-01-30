@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import plaseeraus.logiikka.vieraidenMaaritys.Vieras;
+import plaseeraus.logiikka.Vieras;
 
 public class VierasTest {
     Vieras totte;
@@ -24,7 +24,7 @@ public class VierasTest {
     
     @Before
     public void setUp() {
-        totte = new Vieras("Totte", "Svensson", 'm');
+        totte = new Vieras("Totte", "Svensson", 'm', null);
     }
     
     @After

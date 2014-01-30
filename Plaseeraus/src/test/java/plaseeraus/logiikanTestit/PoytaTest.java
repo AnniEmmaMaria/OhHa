@@ -7,7 +7,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import plaseeraus.logiikka.Poyta;
-import plaseeraus.logiikka.Tuoli;
 
 public class PoytaTest {
     Poyta neljanPoyta;
@@ -44,6 +43,6 @@ public class PoytaTest {
     
     @Test
     public void toStringTulostuu(){
-        assertEquals("Pöydässä on 4 tuolia ja se on salissa numero 1", neljanPoyta.toString());
+        assertEquals("Pöydässä on 4 tuolia ja sen numero on salissa 1", neljanPoyta.toString());
     }
 }

@@ -8,7 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import plaseeraus.logiikka.Plaseeraaja;
-import plaseeraus.logiikka.vieraidenMaaritys.Vieras;
+import plaseeraus.logiikka.Vieras;
 
 public class PlaseeraajaTest {
     Plaseeraaja plaseeraaja;
@@ -31,10 +31,8 @@ public class PlaseeraajaTest {
     public void setUp() {
         plaseeraaja = new Plaseeraaja();
         testilista = new ArrayList<Vieras>();
-        vili = new Vieras("Vili", "Vilperi", 'm');
-        totte = new Vieras("Totte", "Svensson", 'm');
+        vili = new Vieras("Vili", "Vilperi", 'm', null);
         testilista.add(vili);
-        testilista.add(totte);
     }
     
     @After
@@ -50,10 +48,5 @@ public class PlaseeraajaTest {
     
     }
     
-    //Arpoja antaa luvun annetulta väliltä
-    @Test
-    public void arpooAnnetultaVäliltä(){
-   
-    }
     
 }

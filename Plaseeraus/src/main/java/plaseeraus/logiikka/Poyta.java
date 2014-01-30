@@ -42,6 +42,6 @@ public class Poyta {
     
     @Override
     public String toString(){
-        return "Pöydässä on " + this.tuolimaara + " tuolia ja se on salissa numerolla " + this.moneskoSalissa;
+        return "Pöydässä on " + this.tuolimaara + " tuolia ja sen numero on salissa " + this.moneskoSalissa;
     }
 }

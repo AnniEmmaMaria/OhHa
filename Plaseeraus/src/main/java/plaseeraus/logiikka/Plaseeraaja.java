@@ -2,8 +2,6 @@ package plaseeraus.logiikka;
 
 import java.util.ArrayList;
 import java.util.Random;
-import plaseeraus.logiikka.vieraidenMaaritys.Vieras;
-import plaseeraus.logiikka.vieraidenMaaritys.VieraslistanLukija;
 
 public class Plaseeraaja {
     private VieraslistanLukija lukija;
@@ -18,9 +16,9 @@ public class Plaseeraaja {
     
     //Ota Vieras-oliot sisältävä ArrayList "Vieraslista" lukijalla
     public ArrayList<Vieras> annaVieraslista() {
-
         //Luodaan VieraslistanLukijassa ArrayListin sisältö ja otetaan lista ulos
         lukija.luoTekstistaOliotListaksi();
+        
         return lukija.getVieraslista();
     }
 
@@ -36,7 +34,7 @@ public class Plaseeraaja {
             //Arvotaan heistä yksi
             Vieras valittuIstuja = arvoIstuja(sallitutIstujat);
             //Istutetaan valittu tuolille
-            poyta.getTuoli(tuolinInd).otaIstuja(valittuIstuja);            
+            poyta.getTuoli(tuolinInd).otaIstuja(valittuIstuja);           
         }
     }
 

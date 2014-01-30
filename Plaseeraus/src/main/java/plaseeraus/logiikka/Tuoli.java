@@ -1,7 +1,5 @@
 package plaseeraus.logiikka;
 
-import plaseeraus.logiikka.vieraidenMaaritys.Vieras;
-
 public class Tuoli {
     private Vieras istuja;
     
@@ -9,7 +7,7 @@ public class Tuoli {
         this.istuja = null;       
     }
     
-
+    
     //Kuka tuolissa istuu? Kenties null?
     public Vieras getIstuja(){
         return this.istuja;
@@ -24,7 +22,7 @@ public class Tuoli {
     
     @Override
     public String toString(){
-        return "Tuolissa istuu " + this.istuja;
+        return this.istuja.toString();
     } 
           
     
