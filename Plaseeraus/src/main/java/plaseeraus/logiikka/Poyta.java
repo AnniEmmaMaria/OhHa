@@ -33,7 +33,7 @@ public class Poyta {
     
     //Yksittäisen tuolin tietojen hakeminen
     public Tuoli getTuoli(int tuolinNro){
-        return this.tuolit.get(tuolinNro - 1);
+        return this.tuolit.get(tuolinNro);
     }
     //Kaikkien tuolien listan hakeminen
     public ArrayList<Tuoli> getTuolilista(){
@@ -42,6 +42,6 @@ public class Poyta {
     
     @Override
     public String toString(){
-        return "Pöydässä on " + this.tuolimaara + " tuolia ja se on salissa numero " + this.moneskoSalissa;
+        return "Pöydässä on " + this.tuolimaara + " tuolia ja se on salissa numerolla " + this.moneskoSalissa;
     }
 }

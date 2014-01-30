@@ -35,6 +35,10 @@ public class Vieras {
         return this.plaseerattu;
     }
     
+    //Vieras muuttuu plaseeratuksi
+    public void plaseeraa(){
+        this.plaseerattu = true;
+    }
     
     
 }

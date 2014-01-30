@@ -36,10 +36,6 @@ public class TuoliTest {
 
     //Tuolin luontiasetukset oikein?
     @Test
-    public void onkoLuotaessaVapaa() {
-        assertEquals(true, istuin.getVapaa());
-    }
-    @Test
     public void istuukoKukaanLuotaessa(){
         assertEquals(null, istuin.getIstuja());
     }
@@ -49,10 +45,5 @@ public class TuoliTest {
     public void voikoIstua(){
         istuin.otaIstuja(vili);
         assertEquals("Vili Vilperi", istuin.getIstuja().toString());   
-    }
-    @Test
-    public void varautuukoIstuessa(){
-        istuin.otaIstuja(vili);
-        assertEquals(false, istuin.getVapaa());
     }
 }

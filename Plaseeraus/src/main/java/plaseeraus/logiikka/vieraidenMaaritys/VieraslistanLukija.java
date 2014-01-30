@@ -2,42 +2,43 @@ package plaseeraus.logiikka.vieraidenMaaritys;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class VieraslistanLukija {
-    File vieraslista;           //luettava vieraslista
-    Scanner listanLukija;       //sen lukija
-    Vieraslista listaVieraista; //lista johon vieraat tallennetaan
+    File vieraslista;                   //luettava vieraslista
+    Scanner listanLukija;               //sen lukija
+    ArrayList<Vieras> listaVieraista;   //lista johon vieraat tallennetaan
     
     public VieraslistanLukija() {
         this.vieraslista = new File("vieraslista.txt");
 
-        //Vieraslistan lukijan teossa varmistetaan, että tekstitiedosto on olemassa
+        //Vieraslistan lukijan teossa varmistetaan tekstitiedoston olemassaolo
         try {
             listanLukija = new Scanner(vieraslista);
         } catch (FileNotFoundException e) {
             System.out.println("Tiedostoa ei löytynyt");
         }
         
-        listaVieraista = new Vieraslista();
+        this.listaVieraista = new ArrayList<>();
     }
 
     
     
     //Anna vieraslista, johon tekstitiedoston vieraat tallennettiin
-    public Vieraslista getVieraslista(){
+    public ArrayList<Vieras> getVieraslista(){
         return this.listaVieraista;
     }
     
     
     //Luetaan tiedoston rivit yksi kerrallaan ja tehdään riveistä Vieras-oliot
-    //Lisätään oliot KaikkiVieraat-luokkaan
-    public void luoRiveistaOliotListaksi() {
+    //Lisätään oliot listaVieraista-ArrayListiksi
+    public void luoTekstistaOliotListaksi() {
 
         while (listanLukija.hasNextLine()) {
             String rivi = listanLukija.nextLine();
             Vieras uusiVieras = luoTekstirivistaVierasOlio(rivi);
-            listaVieraista.lisaaVierasListalle(uusiVieras);
+            listaVieraista.add(uusiVieras);
         }
     }
     

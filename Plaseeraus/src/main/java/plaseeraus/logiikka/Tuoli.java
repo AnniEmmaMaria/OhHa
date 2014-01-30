@@ -3,35 +3,28 @@ package plaseeraus.logiikka;
 import plaseeraus.logiikka.vieraidenMaaritys.Vieras;
 
 public class Tuoli {
-    private boolean vapaa;
     private Vieras istuja;
     
     public Tuoli(){
-        this.vapaa = true;
         this.istuja = null;       
     }
     
 
-    //TUOLIN NYKYTILANTEEN KYSELYT
-    
-    public boolean getVapaa(){
-        return this.vapaa;
-    }
-    
+    //Kuka tuolissa istuu? Kenties null?
     public Vieras getIstuja(){
-        return istuja;
+        return this.istuja;
     }
     
     
-    //Tuoli ottaa istujan ja muuttuu varatuksi
+    //Tuoli ottaa istujan
     public void otaIstuja(Vieras istuja){
         this.istuja = istuja;
-        this.vapaa = false;
+        istuja.plaseeraa();
     }
     
     @Override
     public String toString(){
-        return "Tuoli on vapaa (" + vapaa + ") ";
+        return "Tuolissa istuu " + this.istuja;
     } 
           
     

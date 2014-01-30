@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0" errors="0" skipped="0" tests="4" name="plaseeraus.logiikanTestit.TuoliTest">
+<testsuite failures="0" time="0" errors="0" skipped="0" tests="2" name="plaseeraus.logiikanTestit.TuoliTest">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64"/>
@@ -33,12 +33,12 @@
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="3.8.0-35-generic"/>
-    <property name="user.home" value="/home/ajokinie"/>
+    <property name="user.home" value="/home/tktl-csfs/fs/home/ajokinie"/>
     <property name="user.timezone" value="Europe/Helsinki"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="java.specification.version" value="1.7"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="ajokinie"/>
+    <property name="user.name" value="ajokinie@cs"/>
     <property name="java.class.path" value="/usr/share/netbeans/7.4/java/maven/boot/plexus-classworlds-2.4.jar"/>
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -62,8 +62,6 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="plaseeraus.logiikanTestit.TuoliTest" name="onkoLuotaessaVapaa"/>
   <testcase time="0" classname="plaseeraus.logiikanTestit.TuoliTest" name="istuukoKukaanLuotaessa"/>
   <testcase time="0" classname="plaseeraus.logiikanTestit.TuoliTest" name="voikoIstua"/>
-  <testcase time="0" classname="plaseeraus.logiikanTestit.TuoliTest" name="varautuukoIstuessa"/>
 </testsuite>
