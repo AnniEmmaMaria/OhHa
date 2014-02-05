@@ -45,7 +45,6 @@ public class PlaseeraajaTest {
         ArrayList<Vieras> vierasLista = plaseeraaja.annaVieraslista();
         Vieras ristoko = vierasLista.get(2);
         assertEquals("Risto Reipas", ristoko.toString());
-    
     }
     
     
