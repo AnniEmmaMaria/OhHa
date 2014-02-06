@@ -5,14 +5,14 @@ public class Vieras {
     private String sukunimi;
     private char sukupuoli;
     private boolean plaseerattu;
-    private Vieras avec;
+    private String avec;
     
-    public Vieras (String etunimi, String sukunimi, char sukupuoli, Vieras avec){
+    public Vieras (String etunimi, String sukunimi, char sukupuoli, String avec){
         this.etunimi = etunimi;
         this.sukunimi = sukunimi;
         this.sukupuoli = sukupuoli;
         this.plaseerattu = false;
-        this.avec = null;
+        this.avec = avec;
     }
     
     //getterit nimi- ja sukupuolitiedoille
@@ -24,6 +24,9 @@ public class Vieras {
     }  
     public char getSukupuoli(){
         return this.sukupuoli;
+    }
+    public String getAvec(){
+        return this.avec;
     }
     
     //toString vieraan nimen tulostukseen

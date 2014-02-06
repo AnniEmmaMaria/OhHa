@@ -56,10 +56,10 @@ public class VieraslistanLukija {
         String sukunimi = tekstirivi.substring(ekanValinInd + 1, toisenValinInd);
         char sukupuoli = tekstirivi.charAt(toisenValinInd + 1);
         
-        //Oletusarvoisesti avecia ei ole
-        Vieras avec = null;     
+        //Oletusarvoisesti avecia ei ole, jolloin se on tyhjä String
+        String avec = "";
        
-        //Jos kyseisellä vieraalla on kuitenkinmääritetty avec
+        //Jos kyseisellä vieraalla on kuitenkin määritetty avec
         if(tekstirivi.contains("(avec: ")){
              int avecinEtunimenAlkuInd = tekstirivi.indexOf("(avec: ") + 7;
              int avecinSukunimenAlkuInd = tekstirivi.indexOf(" ", avecinEtunimenAlkuInd);
@@ -67,13 +67,7 @@ public class VieraslistanLukija {
              String avecinEtunimi = tekstirivi.substring(avecinEtunimenAlkuInd, avecinSukunimenAlkuInd-2);
              String avecinSukunimi = tekstirivi.substring(avecinSukunimenAlkuInd);
              
-             //Avecin sukupuoli on eri kuin vieraan
-             char avecinSukupuoli = 'm';
-             if(sukupuoli == 'm'){
-                 avecinSukupuoli = 'n';
-             }
-             
-             avec = new Vieras(avecinEtunimi, avecinSukunimi, avecinSukupuoli, avec);
+             avec = avecinEtunimi +" "+ avecinSukunimi;
         }
 
         return new Vieras(etunimi, sukunimi, sukupuoli, avec);

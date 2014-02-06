@@ -13,7 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
-import sun.awt.X11.XConstants;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 
 //Käyttäjä määrittää tilan pöytien tuolimäärät
 public class PoytienLisays implements Runnable {
@@ -45,7 +46,7 @@ public class PoytienLisays implements Runnable {
 
         
         //Kenttä vastauksen antamiseen
-        //container.add(luoVastauskentta());
+        container.add(luoVastauskentta());
 
         //Jo luotujen pöytien listaaminen näkyville
         //JTextArea poytalista = new JTextArea(tarkennusteksti);
@@ -55,31 +56,39 @@ public class PoytienLisays implements Runnable {
     }
     
     private JPanel luokysymys(){
-        JPanel paneeli = new JPanel(new GridLayout(2, 1, 2, 1));
+        //Paneelissa on 2 tekstiä allekkain ja niille lisätään annetut marginaalit
+        JPanel paneeli = new JPanel(new GridLayout(2, 1)); 
+        Border marginaalit = new EmptyBorder(5, 10, 0, 10);    
         
+        //Itse kysymys JLabelina isommalla fontilla
         JLabel kysymys = new JLabel(" Anna pöydän tuolien määrä");
         kysymys.setFont(new Font("Arial", 6, 20));
+        kysymys.setBorder(marginaalit);
         paneeli.add(kysymys);
         
+        //Vastausohjeet usealle riville jaettuna
         String tarkennusteksti = "<HTML> Kirjoita kokonaislukuna, montako tuolia pöydässä on. Pöydän on oltava suorakulmainen ja tuolien sen kahdella sivulla. Tuolien lukumäärän tulee olla parillinen ja vähintään 2</HTML>"; 
         JLabel tarkennus = new JLabel(tarkennusteksti);
+        tarkennus.setBorder(marginaalit);
         paneeli.add(tarkennus);
         
         return paneeli;
     }
 
     private JPanel luoVastauskentta() {
-        JPanel paneeli = new JPanel(new GridLayout(1, 5));
+        JPanel paneeli = new JPanel(new GridLayout(1, 3));
 
-        JLabel tuoleja = new JLabel("            Tuoleja on ");
-        JTextField vastauskentta = new JTextField();
-        JLabel tyhja = new JLabel(" ");
+        //Lisätään kysymystekstit ja vastausruudut omilla marginaaleillaan
+        JLabel tuoleja = new JLabel("Seuraavassa pöydässä on ");
+        
+        JTextArea vastauskentta = new JTextArea();
+        //vastauskentta.setBorder(new EmptyBorder(20, 20, 20, 20));
+        JLabel kappaletta = new JLabel("kappaletta tuoleja");
+        kappaletta.setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        paneeli.add(tyhja);
         paneeli.add(tuoleja);
         paneeli.add(vastauskentta);
-        paneeli.add(tyhja);
-        paneeli.add(tyhja);
+        paneeli.add(kappaletta);
 
         return paneeli;
     }
@@ -87,11 +96,11 @@ public class PoytienLisays implements Runnable {
     private JTextArea listaaLuodutPoydat() {
         JTextArea poytalista = new JTextArea("");
 
-        return null;
+        return poytalista;
 
     }
 
-    private JPanel luoJatkamisNappulat(JTextField vastauskentta) {
+    private JPanel luoJatkamisNappulat(JTextArea vastauskentta) {
         JPanel paneeli = new JPanel(new GridLayout(1, 2));
 
         JButton uusiPoyta = new JButton("Lisää uusi pöytä");

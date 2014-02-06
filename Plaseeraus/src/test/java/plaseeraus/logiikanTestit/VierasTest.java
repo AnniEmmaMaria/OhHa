@@ -24,7 +24,7 @@ public class VierasTest {
     
     @Before
     public void setUp() {
-        totte = new Vieras("Totte", "Svensson", 'm', null);
+        totte = new Vieras("Totte", "Svensson", 'm', "");
     }
     
     @After
@@ -43,6 +43,10 @@ public class VierasTest {
       @Test 
      public void sukupuoliOikein(){
          assertEquals('m', totte.getSukupuoli());
+     }
+     @Test
+     public void avecOikein(){
+         assertEquals("", totte.getAvec());
      }
      @Test 
      public void toStringOikein(){
