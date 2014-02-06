@@ -3,14 +3,14 @@ package plaseeraus.logiikka;
 import java.util.ArrayList;
 
 public class Poyta {
-    private int tuolimaara;
-    private int moneskoSalissa;
-    private ArrayList<Tuoli> tuolit;
+    private final int tuolimaara;
+    private final int moneskoSalissa;
+    private final ArrayList<Tuoli> tuolit;
     
     public Poyta(int tuolimaara, int moneskoSalissa){
         this.tuolimaara = tuolimaara;
         this.moneskoSalissa = moneskoSalissa;
-        this.tuolit = new ArrayList<Tuoli>();
+        this.tuolit = new ArrayList<>();
         
     }
     
@@ -42,6 +42,6 @@ public class Poyta {
     
     @Override
     public String toString(){
-        return "Pöydässä on " + this.tuolimaara + " tuolia ja sen numero on salissa " + this.moneskoSalissa;
+        return "Pöydässä nro " + this.moneskoSalissa + " on " + this.tuolimaara + " tuolia.";
     }
 }

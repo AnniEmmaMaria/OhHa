@@ -31,7 +31,7 @@ public class PlaseeraajaTest {
     public void setUp() {
         plaseeraaja = new Plaseeraaja();
         testilista = new ArrayList<Vieras>();
-        vili = new Vieras("Vili", "Vilperi", 'm', null);
+        vili = new Vieras("Vili", "Vilperi", 'm', "");
         testilista.add(vili);
     }
     

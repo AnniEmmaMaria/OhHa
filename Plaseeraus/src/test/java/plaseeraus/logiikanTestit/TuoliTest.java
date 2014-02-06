@@ -27,7 +27,7 @@ public class TuoliTest {
     @Before
     public void setUp() {
         istuin = new Tuoli();
-        vili = new Vieras("Vili", "Vilperi", 'm', null);
+        vili = new Vieras("Vili", "Vilperi", 'm', "");
     }
 
     @After
@@ -45,5 +45,12 @@ public class TuoliTest {
     public void voikoIstua(){
         istuin.otaIstuja(vili);
         assertEquals("Vili Vilperi", istuin.getIstuja().toString());   
+    }
+    
+    //Tuleeko toStringillä istujan nimi
+    @Test
+    public void toStringillaIstuja(){
+        istuin.otaIstuja(vili);
+        assertEquals("Vili Vilperi", istuin.toString());
     }
 }

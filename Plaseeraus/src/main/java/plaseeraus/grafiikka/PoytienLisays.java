@@ -3,7 +3,6 @@ package plaseeraus.grafiikka;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -42,7 +41,7 @@ public class PoytienLisays implements Runnable {
         container.setLayout(osatRuudussa);
 
         //Kysymys ja sen tarkennus
-        container.add(luokysymys());
+        container.add(luoKysymys());
 
         
         //Kenttä vastauksen antamiseen
@@ -55,7 +54,7 @@ public class PoytienLisays implements Runnable {
 
     }
     
-    private JPanel luokysymys(){
+    private JPanel luoKysymys(){
         //Paneelissa on 2 tekstiä allekkain ja niille lisätään annetut marginaalit
         JPanel paneeli = new JPanel(new GridLayout(2, 1)); 
         Border marginaalit = new EmptyBorder(5, 10, 0, 10);    
@@ -104,7 +103,7 @@ public class PoytienLisays implements Runnable {
         JPanel paneeli = new JPanel(new GridLayout(1, 2));
 
         JButton uusiPoyta = new JButton("Lisää uusi pöytä");
-        uusiPoyta.addActionListener(new tuolimaaranLukija(vastauskentta));
+        //uusiPoyta.addActionListener(new tuolimaaranLukija(vastauskentta));
         JButton kaikkiPoydatLisatty = new JButton("Kaikki pöydät lisätty");
 
         paneeli.add(uusiPoyta);

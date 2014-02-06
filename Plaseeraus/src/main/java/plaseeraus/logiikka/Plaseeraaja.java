@@ -13,16 +13,6 @@ public class Plaseeraaja {
     }
 
     
-    
-    //Ota Vieras-oliot sisältävä ArrayList "Vieraslista" lukijalla
-    public ArrayList<Vieras> annaVieraslista() {
-        //Luodaan VieraslistanLukijassa ArrayListin sisältö ja otetaan lista ulos
-        lukija.luoTekstistaOliotListaksi();
-        
-        return lukija.getVieraslista();
-    }
-
-    
     //PLASEERAA PÖYTIEN TUOLEIHIN ISTUJAT
     public void plaseeraa(Poyta poyta) {
         int koko = poyta.getTuolimaara();
@@ -37,7 +27,16 @@ public class Plaseeraaja {
             poyta.getTuoli(tuolinInd).otaIstuja(valittuIstuja);           
         }
     }
+        
 
+    //Ota Vieras-oliot sisältävä ArrayList "Vieraslista" lukijalla
+    public ArrayList<Vieras> annaVieraslista() {
+        //Luodaan VieraslistanLukijassa ArrayListin sisältö ja otetaan lista ulos
+        lukija.luoTekstistaOliotListaksi();
+        
+        return lukija.getVieraslista();
+    }
+    
     
     //Valitsee alkuperäiseltä vieraslistalta uudeksi listaksi plaseeraamattomat 
     //oikeaa sukupuolta olevat Vieras-oliot

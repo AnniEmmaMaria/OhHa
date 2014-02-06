@@ -1,5 +1,6 @@
 package plaseeraus.logiikanTestit;
 
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -7,9 +8,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import plaseeraus.logiikka.Poyta;
+import plaseeraus.logiikka.Tuoli;
+import plaseeraus.logiikka.Vieras;
 
 public class PoytaTest {
+
     Poyta neljanPoyta;
+    Vieras vili;
 
     public PoytaTest() {
     }
@@ -24,7 +29,9 @@ public class PoytaTest {
 
     @Before
     public void setUp() {
-        neljanPoyta = new Poyta(4,1);
+        neljanPoyta = new Poyta(4, 1);
+        vili = new Vieras("Vili", "Vilperi", 'm', "Nanni Koala");
+
     }
 
     @After
@@ -36,13 +43,34 @@ public class PoytaTest {
     public void tuolimaaraOikein() {
         assertEquals(4, neljanPoyta.getTuolimaara());
     }
+
     @Test
-    public void poytanumeroOikein(){
+    public void poytanumeroOikein() {
         assertEquals(1, neljanPoyta.getPoydanNumero());
     }
-    
+
     @Test
-    public void toStringTulostuu(){
-        assertEquals("Pöydässä on 4 tuolia ja sen numero on salissa 1", neljanPoyta.toString());
+    public void toStringTulostuu() {
+        assertEquals("Pöydässä nro 1 on 4 tuolia.", neljanPoyta.toString());
+    }
+
+    //Tuolilistan luonti
+    @Test
+    public void tuoliLuonnistuu() {
+        neljanPoyta.luoTuolit();
+        Tuoli kolmostuoli = neljanPoyta.getTuoli(3);
+        kolmostuoli.otaIstuja(vili);
+
+        assertEquals("Vili Vilperi", kolmostuoli.toString());
+    }
+
+    @Test
+    public void tuoliListaLuonnistuu() {
+        neljanPoyta.luoTuolit();
+        ArrayList<Tuoli> tuolit = neljanPoyta.getTuolilista();
+        tuolit.get(1).otaIstuja(vili);
+        
+        assertEquals("Vili Vilperi", tuolit.get(1).toString());
+
     }
 }

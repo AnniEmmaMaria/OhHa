@@ -9,50 +9,73 @@ import static org.junit.Assert.*;
 import plaseeraus.logiikka.Vieras;
 
 public class VierasTest {
-    Vieras totte;
-    
+
+    Vieras chandler;
+
     public VierasTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
-        totte = new Vieras("Totte", "Svensson", 'm', "");
+        chandler = new Vieras("Chandler", "Bing", 'm', "Monica Geller");
     }
-    
+
     @After
     public void tearDown() {
     }
 
     //Toimivatko getterit ja toString oikein?
     @Test
-    public void etunimiOikein(){
-        assertEquals("Totte", totte.getEtunimi());
+    public void etunimiOikein() {
+        assertEquals("Chandler", chandler.getEtunimi());
     }
-     @Test 
-     public void sukunimiOikein(){
-         assertEquals("Svensson", totte.getSukunimi());
-     }
-      @Test 
-     public void sukupuoliOikein(){
-         assertEquals('m', totte.getSukupuoli());
-     }
-     @Test
-     public void avecOikein(){
-         assertEquals("", totte.getAvec());
-     }
-     @Test 
-     public void toStringOikein(){
-         assertEquals("Totte Svensson", totte.toString());
-     }
 
- 
-            
+    @Test
+    public void sukunimiOikein() {
+        assertEquals("Bing", chandler.getSukunimi());
+    }
+
+    @Test
+    public void sukupuoliOikein() {
+        assertEquals('m', chandler.getSukupuoli());
+    }
+
+    @Test
+    public void avecOikein() {
+        assertEquals("Monica Geller", chandler.getAvec());
+    }
+
+    @Test
+    public void toStringOikein() {
+        assertEquals("Chandler Bing", chandler.toString());
+    }
+
+    //Toimiiko plaseerauksen true / false
+    @Test
+    public void plaseeraamatonAlussa() {
+        String plaseeraustosi = "tosi";
+        if (chandler.onkoPlaseerattu() == false) {
+            plaseeraustosi = "vale";
+        }
+
+        assertEquals("vale", plaseeraustosi);
+    }
+
+    @Test
+    public void plaseerautuuko() {
+        chandler.plaseeraa();
+        boolean plaseerattu = chandler.onkoPlaseerattu();
+        assertTrue(plaseerattu);
+    }
+
 }
+
+
