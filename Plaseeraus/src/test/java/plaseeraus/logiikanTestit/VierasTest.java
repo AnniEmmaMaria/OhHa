@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import plaseeraus.logiikka.Sukupuoli;
 import plaseeraus.logiikka.Vieras;
 
 public class VierasTest {
@@ -25,7 +26,7 @@ public class VierasTest {
 
     @Before
     public void setUp() {
-        chandler = new Vieras("Chandler", "Bing", 'm', "Monica Geller");
+        chandler = new Vieras("Chandler", "Bing", Sukupuoli.MIES, "Monica Geller");
     }
 
     @After
@@ -45,7 +46,7 @@ public class VierasTest {
 
     @Test
     public void sukupuoliOikein() {
-        assertEquals('m', chandler.getSukupuoli());
+        assertEquals(Sukupuoli.MIES, chandler.getSukupuoli());
     }
 
     @Test

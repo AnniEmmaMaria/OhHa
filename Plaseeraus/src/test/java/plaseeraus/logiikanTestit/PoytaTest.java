@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import plaseeraus.logiikka.Poyta;
+import plaseeraus.logiikka.Sukupuoli;
 import plaseeraus.logiikka.Tuoli;
 import plaseeraus.logiikka.Vieras;
 
@@ -30,7 +31,7 @@ public class PoytaTest {
     @Before
     public void setUp() {
         neljanPoyta = new Poyta(4, 1);
-        vili = new Vieras("Vili", "Vilperi", 'm', "Nanni Koala");
+        vili = new Vieras("Vili", "Vilperi", Sukupuoli.MIES, "Nanni Koala");
 
     }
 

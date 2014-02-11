@@ -1,13 +1,13 @@
 package plaseeraus.logiikka;
 
 public class Vieras {
-    private String etunimi;
-    private String sukunimi;
-    private char sukupuoli;
+    private final String etunimi;
+    private final String sukunimi;
+    private final Sukupuoli sukupuoli;
     private boolean plaseerattu;
-    private String avec;
+    private final String avec;
     
-    public Vieras (String etunimi, String sukunimi, char sukupuoli, String avec){
+    public Vieras (String etunimi, String sukunimi, Sukupuoli sukupuoli, String avec){
         this.etunimi = etunimi;
         this.sukunimi = sukunimi;
         this.sukupuoli = sukupuoli;
@@ -22,7 +22,7 @@ public class Vieras {
     public String getSukunimi(){
         return this.sukunimi;
     }  
-    public char getSukupuoli(){
+    public Sukupuoli getSukupuoli(){
         return this.sukupuoli;
     }
     public String getAvec(){

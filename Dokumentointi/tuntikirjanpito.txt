@@ -2,9 +2,9 @@
 				
 Päivä		Aloitus	Lopetus	Työmäärä (h)	Mitä tehty?
 
-15.01.2014	13,0	16,0	3,0		Gitin käyttöönottoa
-16.01.2014	13,3	15,0	1,8		Aiheen määrittelyä ja kansiorakenteen tekoa
-20.01.2014	18,0	20,0	2,0		Koodauksen aloitus NetBeansissa
+15.01.2014	13:00	16:00	3,0		Gitin käyttöönottoa
+16.01.2014	13:20	15:00	1,8		Aiheen määrittelyä ja kansiorakenteen tekoa
+20.01.2014	18:00	20:00	2,0		Koodauksen aloitus NetBeansissa
 22.01.2014	9,5	12,5	3,0		Luokkakaavio yEDillä
 22.01.2014	13,0	16,5	3,5		Lähinnä VieraslistanLukijan tekoa (Mikki Hiiri on mies!)
 23.01.2014	13,0	17,5	4,5		Testien ja pit-kansion teko
@@ -16,7 +16,7 @@ Päivä		Aloitus	Lopetus	Työmäärä (h)	Mitä tehty?
 05.02.2014	13,3	17,0	3,7		Käyttöliittymän tekemistä
 06.02.2014	14,0	15,5	1,5		Sekvenssikaavion piirtoa ja avecin muutto Stringiksi
 06.02.2014	18,0	22,0	4,0		Sekvenssikaavion piirtoa corelilla ja Javadocin yritystä
-
+11.02.2014	19:30	21:00	1,5		Käyttöliittymän jatkoa, sukupulen muutos enumiksi, avecin siistiminen
 
 
 

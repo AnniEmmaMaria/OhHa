@@ -3,6 +3,7 @@ package plaseeraus.grafiikka;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -42,17 +43,15 @@ public class PoytienLisays implements Runnable {
 
         //Kysymys ja sen tarkennus
         container.add(luoKysymys());
-
-        
         //Kenttä vastauksen antamiseen
         container.add(luoVastauskentta());
-
         //Jo luotujen pöytien listaaminen näkyville
         //JTextArea poytalista = new JTextArea(tarkennusteksti);
         //Mitä seuraavaksi tehdään
         //container.add(luoJatkamisNappulat(vastauskentta));
 
     }
+    
     
     private JPanel luoKysymys(){
         //Paneelissa on 2 tekstiä allekkain ja niille lisätään annetut marginaalit
@@ -73,17 +72,15 @@ public class PoytienLisays implements Runnable {
         
         return paneeli;
     }
+    
 
     private JPanel luoVastauskentta() {
-        JPanel paneeli = new JPanel(new GridLayout(1, 3));
+        JPanel paneeli = new JPanel(new GridBagLayout());
 
-        //Lisätään kysymystekstit ja vastausruudut omilla marginaaleillaan
-        JLabel tuoleja = new JLabel("Seuraavassa pöydässä on ");
-        
-        JTextArea vastauskentta = new JTextArea();
-        //vastauskentta.setBorder(new EmptyBorder(20, 20, 20, 20));
-        JLabel kappaletta = new JLabel("kappaletta tuoleja");
-        kappaletta.setBorder(new EmptyBorder(10, 10, 10, 10));
+        //Lisätään kysymystekstit ja vastausruutu
+        JLabel tuoleja = new JLabel("Seuraavassa pöydässä on ");      
+        JTextField vastauskentta = new JTextField(3);
+        JLabel kappaletta = new JLabel(" kappaletta tuoleja");
 
         paneeli.add(tuoleja);
         paneeli.add(vastauskentta);

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Plaseeraaja {
-    private VieraslistanLukija lukija;
-    private Random arpoja;
+    private final VieraslistanLukija lukija;
+    //private final Random arpoja;
 
     public Plaseeraaja() {
         this.lukija = new VieraslistanLukija();
-        this.arpoja = new Random();
+        //this.arpoja = new Random();
     }
 
     
@@ -52,9 +52,9 @@ public class Plaseeraaja {
             if (vieras.onkoPlaseerattu() == false) {
                 
                 //mies parillisille tuoleille
-                if (tuolinInd % 2 == 0 && vieras.getSukupuoli() == 'm') {
+                if (tuolinInd % 2 == 0 && vieras.getSukupuoli() == Sukupuoli.MIES) {
                     sallitutIstujat.add(vieras);
-                }else if(tuolinInd % 2 != 0 && vieras.getSukupuoli() == 'n'){
+                }else if(tuolinInd % 2 != 0 && vieras.getSukupuoli() == Sukupuoli.NAINEN){
                     sallitutIstujat.add(vieras);
                 }
             }
@@ -69,6 +69,7 @@ public class Plaseeraaja {
         int listanKoko = sallitutIstujat.size();
         
         //random arpoja arpoo kokonaisluvun väliltä [0,listanKoko[
+        Random arpoja = new Random();
         int arvottuLuku = arpoja.nextInt(listanKoko);
         //palautetaan tällä luvulla esiintyvä sallittu Vieras
         return sallitutIstujat.get(arvottuLuku);

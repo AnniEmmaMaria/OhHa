@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import plaseeraus.logiikka.Plaseeraaja;
+import plaseeraus.logiikka.Sukupuoli;
 import plaseeraus.logiikka.Vieras;
 
 public class PlaseeraajaTest {
@@ -30,8 +31,8 @@ public class PlaseeraajaTest {
     @Before
     public void setUp() {
         plaseeraaja = new Plaseeraaja();
-        testilista = new ArrayList<Vieras>();
-        vili = new Vieras("Vili", "Vilperi", 'm', "");
+        testilista = new ArrayList<>();
+        vili = new Vieras("Vili", "Vilperi", Sukupuoli.MIES, "");
         testilista.add(vili);
     }
     

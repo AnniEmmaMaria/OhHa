@@ -54,23 +54,34 @@ public class VieraslistanLukija {
         //Haetaan välilyöntien avulla attribuutit ja palautetaan Vieras-olio
         String etunimi = tekstirivi.substring(0, ekanValinInd);
         String sukunimi = tekstirivi.substring(ekanValinInd + 1, toisenValinInd);
-        char sukupuoli = tekstirivi.charAt(toisenValinInd + 1);
+        
+        //Sukupuolen määrittelee m/n -kirjain
+        Sukupuoli sukup = null;
+        char sukupKirjain = tekstirivi.charAt(toisenValinInd + 1);
+        if(sukupKirjain == 'm'){
+            sukup = Sukupuoli.MIES;
+        }else if(sukupKirjain == 'n'){
+            sukup = Sukupuoli.NAINEN;
+        }else{
+            virheilmoitus("sukupuoli");
+        }
+        
         
         //Oletusarvoisesti avecia ei ole, jolloin se on tyhjä String
         String avec = "";
        
         //Jos kyseisellä vieraalla on kuitenkin määritetty avec
         if(tekstirivi.contains("(avec: ")){
-             int avecinEtunimenAlkuInd = tekstirivi.indexOf("(avec: ") + 7;
-             int avecinSukunimenAlkuInd = tekstirivi.indexOf(" ", avecinEtunimenAlkuInd);
-             
-             String avecinEtunimi = tekstirivi.substring(avecinEtunimenAlkuInd, avecinSukunimenAlkuInd-2);
-             String avecinSukunimi = tekstirivi.substring(avecinSukunimenAlkuInd);
-             
-             avec = avecinEtunimi +" "+ avecinSukunimi;
+             int avecinNimenAlkuInd = tekstirivi.indexOf("(avec: ") + 7;
+             avec = tekstirivi.substring(avecinNimenAlkuInd);
         }
 
-        return new Vieras(etunimi, sukunimi, sukupuoli, avec);
+        return new Vieras(etunimi, sukunimi, sukup, avec);
+    }
+    
+    //Virheilmoituksen laukaisumetodi
+    public void virheilmoitus(String aiheuttaja){
+        System.out.println("Vieraslistassa virhe kohdassa " + aiheuttaja + ". Ei osaa lukea sitä");
     }
 
 }

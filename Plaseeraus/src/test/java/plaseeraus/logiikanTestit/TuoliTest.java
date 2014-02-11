@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import plaseeraus.logiikka.Sukupuoli;
 import plaseeraus.logiikka.Vieras;
 
 public class TuoliTest {
@@ -27,7 +28,7 @@ public class TuoliTest {
     @Before
     public void setUp() {
         istuin = new Tuoli();
-        vili = new Vieras("Vili", "Vilperi", 'm', "");
+        vili = new Vieras("Vili", "Vilperi", Sukupuoli.MIES, "");
     }
 
     @After
