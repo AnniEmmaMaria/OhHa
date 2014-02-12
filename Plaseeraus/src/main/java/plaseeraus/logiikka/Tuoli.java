@@ -8,7 +8,7 @@ public class Tuoli {
     }
     
     
-    //Kuka tuolissa istuu? Kenties null?
+    //Kuka tuolissa istuu?
     public Vieras getIstuja(){
         return this.istuja;
     }

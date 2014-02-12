@@ -38,6 +38,6 @@ public class Poyta {
     
     @Override
     public String toString(){
-        return "Tässä pöydässä on " + this.tuolimaara + " tuolia.";
+        return this.tuolimaara + " tuolin pöytä";
     }
 }

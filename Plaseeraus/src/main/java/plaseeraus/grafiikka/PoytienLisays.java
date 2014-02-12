@@ -31,7 +31,7 @@ public class PoytienLisays implements Runnable {
     @Override
     public void run() {
         ruutu = new JFrame("Määritä juhlatilan pöydät");
-        ruutu.setPreferredSize(new Dimension(600, 700));
+        ruutu.setPreferredSize(new Dimension(700, 700));
         ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         luoKomponentit(ruutu.getContentPane());
@@ -41,8 +41,8 @@ public class PoytienLisays implements Runnable {
     }
 
     private void luoKomponentit(Container container) {
-        //Ruudussa on 4 osaa
-        GridLayout osatRuudussa = new GridLayout(4, 1);
+        //Ruudussa on 3 osaa
+        BoxLayout osatRuudussa = new BoxLayout(container, BoxLayout.Y_AXIS);
         container.setLayout(osatRuudussa);
 
         //Kysymys ja sen tarkennus
@@ -50,7 +50,7 @@ public class PoytienLisays implements Runnable {
         //Kenttä vastauksen antamiseen. Jo luotujen pöytien listaaminen näkyville
         container.add(PoydanLisays());
         //Mitä seuraavaksi tehdään
-        //container.add(luoJatkamisNappulat(vastauskentta));
+        container.add(luoJatkamisNappula());
 
     }
 
@@ -62,7 +62,7 @@ public class PoytienLisays implements Runnable {
 
         //Itse kysymys JLabelina isommalla fontilla
         JLabel kysymys = new JLabel(" Anna pöydän tuolien määrä");
-        kysymys.setFont(new Font("Arial", 6, 20));
+        kysymys.setFont(new Font("Arial", 8, 20));
         kysymys.setBorder(marginaalit);
         paneeli.add(kysymys);
 
@@ -77,56 +77,52 @@ public class PoytienLisays implements Runnable {
 
     //Vastauskenttä pöydän koon ilmoittamiseen
     public JPanel PoydanLisays() {
-        JPanel paneeli = new JPanel(new GridLayout(2, 1));
-        paneeli.add(vastausruutu());
-        paneeli.add(listallaLuodutPoydat());
-
-        return paneeli;
-    }
-
-    private JPanel vastausruutu() {
-        JPanel paneeli = new JPanel(new GridBagLayout());
+        JPanel paneeli = new JPanel(new GridLayout(3, 2, 50, 20));
+        JPanel sisaPaneeli = new JPanel(new GridBagLayout());
         
-        //Lisätään kysymystekstit, vastausruutu ja nappula
+        //Sisäpaneelissa on rivissä kysymys, vastauskenttä ja vastauksen loppu
         JLabel tuoleja = new JLabel("Seuraavassa pöydässä on ");
         JTextArea vastauskentta = new JTextArea(1, 3);
-        JTextField tilastointikentta = new JTextField();
-        JLabel kappaletta = new JLabel(" kappaletta tuoleja     ");
+        JLabel kappaletta = new JLabel(" kpl tuoleja");
+        
+        sisaPaneeli.add(tuoleja);
+        sisaPaneeli.add(vastauskentta);
+        sisaPaneeli.add(kappaletta);
+        
+        //Alimmissa grideissä on paneeleina jo lisätyt pöydät ja tuolien summa
+        JPanel poytaTilasto = new JPanel(new GridBagLayout());
+        JPanel tuoliTilasto = new JPanel(new GridBagLayout());
+        
+        poytaTilasto.add(new JLabel("Tallennetut pöydät:          "));
+        JTextArea poydatListana = new JTextArea(50, 30);
+        poytaTilasto.add(poydatListana);
+        
+        tuoliTilasto.add(new JLabel("Paikkoja yhteensä:       "));
+        JTextField tuolienSumma = new JTextField();
+        tuoliTilasto.add(tuolienSumma);
+        
+        //Keskimmäisessä gridissä on nappula
         JButton uusiPoyta = new JButton("Lisää uusi pöytä");
-        uusiPoyta.addActionListener(new tuolimaaranLukija(vastauskentta, poytalista, tilastointikentta));
+        uusiPoyta.addActionListener(new tuolimaaranLukija(vastauskentta, this.poytalista, poydatListana, tuolienSumma));
 
-        paneeli.add(tuoleja);
-        paneeli.add(vastauskentta);
-        paneeli.add(kappaletta);
-        paneeli.add(uusiPoyta);
-        paneeli.add(tilastointikentta);
+        //Täytetään paneelin 3*2 lokeroa
+        paneeli.add(sisaPaneeli);       //vasen ylänurkka
+        paneeli.add(new JLabel());      //oikea ylänurkka = tyhjä
+        paneeli.add(new JLabel());      //vasen keskikohta = tyhjä
+        paneeli.add(uusiPoyta);         //oikea keskikohta = nappula
+        paneeli.add(poytaTilasto);     //vasen alanurkka = pöytätilasto
+        paneeli.add(tuoliTilasto);      //oikea alanurkka = tuolitilasto
 
         return paneeli;
     }
 
-    //Listataan näkyville jo annetut pöydät, kun sanottu "Lisää uusi pöytä"
-    private JPanel listallaLuodutPoydat() {
-        JPanel paneeli = new JPanel(new GridLayout());
-
-        for (Poyta yksipoyta : this.poytalista.annaPoytalista()) {
-            JLabel yhdenPoydanTulostus = new JLabel(yksipoyta.toString());
-            paneeli.add(yhdenPoydanTulostus);
-        }
-        return paneeli;
-
-    }
 
     //2 nappulaa määrää seuraavan tapahtuman. Lisää vielä pöytä tai plaseeraa
-    private JPanel luoJatkamisNappulat(JTextArea vastauskentta) {
-        JPanel paneeli = new JPanel(new GridLayout(1, 2));
-
-        JButton uusiPoyta = new JButton("Lisää uusi pöytä");
-        //
+    private JButton luoJatkamisNappula() {
         JButton kaikkiPoydatLisatty = new JButton("Kaikki pöydät lisätty");
+//        kaikkiPoydatLisatty.addActionListener(null);
 
-        paneeli.add(uusiPoyta);
-        paneeli.add(kaikkiPoydatLisatty);
 
-        return paneeli;
+        return kaikkiPoydatLisatty;
     }
 }

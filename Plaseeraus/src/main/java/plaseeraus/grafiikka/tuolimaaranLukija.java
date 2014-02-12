@@ -5,16 +5,19 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import plaseeraus.logiikka.PoytaLista;
+import plaseeraus.logiikka.Poyta;
 
 public class tuolimaaranLukija implements ActionListener{
     private final JTextArea vastausKentta;
     private PoytaLista poytalista;
-    private JTextField tilastoKentta;
+    private JTextArea poytaTilasto;
+    private JTextField tuoliTilasto;
     
-    public tuolimaaranLukija(JTextArea vastausKentta, PoytaLista poytalista, JTextField poytaTilastoKentta){
+    public tuolimaaranLukija(JTextArea vastausKentta, PoytaLista poytalista, JTextArea poytaTilastoKentta, JTextField tuolienSumma){
         this.vastausKentta = vastausKentta;
         this.poytalista = poytalista;
-        this.tilastoKentta = poytaTilastoKentta;
+        this.poytaTilasto = poytaTilastoKentta;
+        this.tuoliTilasto = tuolienSumma;
     }
 
     @Override
@@ -24,8 +27,18 @@ public class tuolimaaranLukija implements ActionListener{
         this.vastausKentta.setText("");
         //Luodaan tiedosta uusi pöytä
         poytalista.lisaaPoyta(tuolimaara);
-        this.tilastoKentta.setText("kukkuu");
-        System.out.println("Lisäsi pöydän");
+        
+        //Kasataan String, jossa on luodut pöydät
+        String tilasto = "";
+        int tuolienSumma = 0;
+        for(Poyta yksiPoyta : this.poytalista.annaPoytalista()){
+            tilasto = tilasto + yksiPoyta.toString() + "\n";
+            
+            tuolienSumma = tuolienSumma + yksiPoyta.getTuolimaara();
+        }
+        
+        this.poytaTilasto.setText(tilasto);
+        this.tuoliTilasto.setText("" + tuolienSumma);
     }
     
 }
