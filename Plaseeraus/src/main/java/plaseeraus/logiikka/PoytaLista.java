@@ -9,7 +9,8 @@ public class PoytaLista {
         this.poydat = new ArrayList<>();
     }
     
-    public void lisaaPoyta(Poyta uusiPoyta){
+    public void lisaaPoyta(int tuolimaara, int moneskoSalissa){
+        Poyta uusiPoyta = new Poyta(tuolimaara, moneskoSalissa);
         this.poydat.add(uusiPoyta);
     }
     
