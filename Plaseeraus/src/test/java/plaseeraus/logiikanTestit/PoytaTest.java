@@ -30,7 +30,7 @@ public class PoytaTest {
 
     @Before
     public void setUp() {
-        neljanPoyta = new Poyta(4, 1);
+        neljanPoyta = new Poyta(4);
         vili = new Vieras("Vili", "Vilperi", Sukupuoli.MIES, "Nanni Koala");
 
     }
@@ -46,13 +46,8 @@ public class PoytaTest {
     }
 
     @Test
-    public void poytanumeroOikein() {
-        assertEquals(1, neljanPoyta.getPoydanNumero());
-    }
-
-    @Test
     public void toStringTulostuu() {
-        assertEquals("Pöydässä nro 1 on 4 tuolia.", neljanPoyta.toString());
+        assertEquals("Tässä pöydässä on 4 tuolia.", neljanPoyta.toString());
     }
 
     //Tuolilistan luonti
@@ -73,5 +68,13 @@ public class PoytaTest {
         
         assertEquals("Vili Vilperi", tuolit.get(1).toString());
 
+    }
+    
+    //Yhden tuolin tietojen haku. Printtaako annetun istujan?
+    @Test 
+    public void getTuoliOikein(){
+        neljanPoyta.luoTuolit();
+        neljanPoyta.getTuoli(2).otaIstuja(vili);
+        assertEquals("Vili Vilperi", this.neljanPoyta.getTuoli(2).toString());
     }
 }

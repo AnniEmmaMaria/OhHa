@@ -5,18 +5,18 @@ import java.util.Random;
 
 public class Plaseeraaja {
     private final VieraslistanLukija lukija;
-    //private final Random arpoja;
+    private Random arpoja;
 
     public Plaseeraaja() {
         this.lukija = new VieraslistanLukija();
-        //this.arpoja = new Random();
+        this.arpoja = new Random();
     }
 
     
     //PLASEERAA PÖYTIEN TUOLEIHIN ISTUJAT
     public void plaseeraa(Poyta poyta) {
         int koko = poyta.getTuolimaara();
-        
+
         //Tuoli kerrallaan
         for (int tuolinInd = 0; tuolinInd < koko; tuolinInd++) {
             //määritetään sallitut istujat
@@ -24,7 +24,7 @@ public class Plaseeraaja {
             //Arvotaan heistä yksi
             Vieras valittuIstuja = arvoIstuja(sallitutIstujat);
             //Istutetaan valittu tuolille
-            poyta.getTuoli(tuolinInd).otaIstuja(valittuIstuja);           
+            poyta.getTuoli(tuolinInd).otaIstuja(valittuIstuja);  
         }
     }
         
@@ -69,7 +69,6 @@ public class Plaseeraaja {
         int listanKoko = sallitutIstujat.size();
         
         //random arpoja arpoo kokonaisluvun väliltä [0,listanKoko[
-        Random arpoja = new Random();
         int arvottuLuku = arpoja.nextInt(listanKoko);
         //palautetaan tällä luvulla esiintyvä sallittu Vieras
         return sallitutIstujat.get(arvottuLuku);

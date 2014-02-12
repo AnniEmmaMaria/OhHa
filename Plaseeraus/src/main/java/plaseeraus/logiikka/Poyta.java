@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 public class Poyta {
     private final int tuolimaara;
-    private final int moneskoSalissa;
     private final ArrayList<Tuoli> tuolit;
     
-    public Poyta(int tuolimaara, int moneskoSalissa){
+    public Poyta(int tuolimaara){
         this.tuolimaara = tuolimaara;
-        this.moneskoSalissa = moneskoSalissa;
         this.tuolit = new ArrayList<>();
         
     }
@@ -17,9 +15,6 @@ public class Poyta {
     //getterit pöydän tietojen hakuun
     public int getTuolimaara(){
         return this.tuolimaara;
-    }
-    public int getPoydanNumero(){
-        return this.moneskoSalissa;
     }
  
     //Luodaan kaikki pöydän sivuilla olevat tuolit listaksi
@@ -33,7 +28,8 @@ public class Poyta {
     
     //Yksittäisen tuolin tietojen hakeminen
     public Tuoli getTuoli(int tuolinNro){
-        return this.tuolit.get(tuolinNro);
+        Tuoli penkki = this.tuolit.get(tuolinNro);
+        return penkki;
     }
     //Kaikkien tuolien listan hakeminen
     public ArrayList<Tuoli> getTuolilista(){
@@ -42,6 +38,6 @@ public class Poyta {
     
     @Override
     public String toString(){
-        return "Pöydässä nro " + this.moneskoSalissa + " on " + this.tuolimaara + " tuolia.";
+        return "Tässä pöydässä on " + this.tuolimaara + " tuolia.";
     }
 }
