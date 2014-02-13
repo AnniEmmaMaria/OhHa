@@ -22,6 +22,7 @@ Päivä		Aloitus	Lopetus	Työmäärä (h)	Mitä tehty?
 12.02.2014	19:30	21:00	1,5		Grafiikan vääntöä kohdalleen. Kaksi alinta ruutua väärinpäin
 12.02.2014	21:15	21:45	0,5		Nyt se tilastoi tuolit ja pöydät melkein kauniisti
 13.02.2014	8:20	9:05	0,75		Periaatteessa se toimii jo. Tulostus nätiksi seuravaksi.
+13.02.2014	14:30	16:00	1,5		Javadocin aloitus. Virheilmoituksen tekoa.
 
 	
 Kokonaistyöaika:		h
