@@ -16,7 +16,6 @@ import javax.swing.WindowConstants;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import plaseeraus.logiikka.PoytaLista;
-import plaseeraus.logiikka.Poyta;
 
 //Käyttäjä määrittää tilan pöytien tuolimäärät
 public class PoytienLisays implements Runnable {
@@ -94,7 +93,7 @@ public class PoytienLisays implements Runnable {
         JPanel tuoliTilasto = new JPanel(new GridBagLayout());
         
         poytaTilasto.add(new JLabel("Tallennetut pöydät:          "));
-        JTextArea poydatListana = new JTextArea(50, 30);
+        JTextArea poydatListana = new JTextArea();
         poytaTilasto.add(poydatListana);
         
         tuoliTilasto.add(new JLabel("Paikkoja yhteensä:       "));
@@ -117,10 +116,10 @@ public class PoytienLisays implements Runnable {
     }
 
 
-    //2 nappulaa määrää seuraavan tapahtuman. Lisää vielä pöytä tai plaseeraa
+    //Plaseerauksen aloittava nappula
     private JButton luoJatkamisNappula() {
         JButton kaikkiPoydatLisatty = new JButton("Kaikki pöydät lisätty");
-//        kaikkiPoydatLisatty.addActionListener(null);
+        kaikkiPoydatLisatty.addActionListener(new PlaseeraamisenKaynnistys(this.poytalista));
 
 
         return kaikkiPoydatLisatty;
