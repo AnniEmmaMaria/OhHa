@@ -13,12 +13,13 @@ public class Poyta {
 
     }
 
-    //getterit pöydän tietojen hakuun
     public int getTuolimaara() {
         return this.tuolimaara;
     }
 
-    //Luodaan kaikki pöydän sivuilla olevat tuolit listaksi
+    /**
+     *Luo pöytään kuuluvat tuolit ja lisää ne tuolit-listaan
+     */
     public void luoTuolit() {
         for (int tuoliNro = 1; tuoliNro <= this.tuolimaara; tuoliNro++) {
             Tuoli uusiTuoli = new Tuoli();
@@ -26,7 +27,6 @@ public class Poyta {
         }
     }
 
-    //Yksittäisen tuolin tietojen hakeminen
     public Tuoli getTuoli(int tuolinNro) {
         Tuoli penkki = this.tuolit.get(tuolinNro);
         return penkki;

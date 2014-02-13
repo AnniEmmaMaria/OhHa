@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Plaseeraaja {
     private final VieraslistanLukija lukija;
-    private Random arpoja;
+    private final Random arpoja;
 
     public Plaseeraaja() {
         this.lukija = new VieraslistanLukija();

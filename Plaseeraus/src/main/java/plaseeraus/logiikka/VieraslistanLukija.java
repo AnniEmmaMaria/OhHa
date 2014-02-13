@@ -6,14 +6,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class VieraslistanLukija {
-    File vieraslista;                   //luettava vieraslista
-    Scanner listanLukija;               //sen lukija
-    ArrayList<Vieras> listaVieraista;   //lista johon vieraat tallennetaan
+    File vieraslista;            
+    Scanner listanLukija;     
+    ArrayList<Vieras> listaVieraista;   
     
+    /**
+     * Luettava vieraslista annetaan
+     * Sen scanneria luotaessa varmistetaan tekstitiedoston olemassaolo
+     * Vieraat tallennetaan ArrayListiin
+     */
     public VieraslistanLukija() {
         this.vieraslista = new File("vieraslista.txt");
 
-        //Vieraslistan lukijan teossa varmistetaan tekstitiedoston olemassaolo
         try {
             listanLukija = new Scanner(vieraslista);
         } catch (FileNotFoundException e) {
@@ -31,8 +35,11 @@ public class VieraslistanLukija {
     }
     
     
-    //Luetaan tiedoston rivit yksi kerrallaan ja tehdään riveistä Vieras-oliot
-    //Lisätään oliot listaVieraista-ArrayListiksi
+    /**
+     * Luetaan tiedoston rivit yksi kerrallaan
+     * Tehdään riveistä Vieras-oliot luoTekstirivistaVierasOlio-metodilla
+     * Lisätään oliot listaVieraista-ArrayListiksi
+     */
     public void luoTekstistaOliotListaksi() {
 
         while (listanLukija.hasNextLine()) {
@@ -42,8 +49,13 @@ public class VieraslistanLukija {
         }
     }
     
-
-    //Luo yhdestä tekstirivistä Vieras-olion etsimällä attribuutit (etu- ja sukunimi, sukupuoli) 
+    
+    /**
+     * Luo yhdestä tekstirivistä Vieras-olion etsimällä attribuutit
+     * (etu- ja sukunimi, sukupuoli, avec) 
+     * @param txt-tiedostosta luettu yksi tekstirivi
+     * @return rivin tiedoista luodun Vieras-olion
+     */
     private Vieras luoTekstirivistaVierasOlio(String tekstirivi) {
         
         //Välilyönnit (2 kpl) erottavat 3 attribuuttia

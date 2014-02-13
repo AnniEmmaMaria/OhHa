@@ -102,7 +102,7 @@ public class PoytienLisays implements Runnable {
         
         //Keskimmäisessä gridissä on nappula
         JButton uusiPoyta = new JButton("Lisää uusi pöytä");
-        uusiPoyta.addActionListener(new tuolimaaranLukija(vastauskentta, this.poytalista, poydatListana, tuolienSumma));
+        uusiPoyta.addActionListener(new PoytienLuoja(vastauskentta, this.poytalista, poydatListana, tuolienSumma));
 
         //Täytetään paneelin 3*2 lokeroa
         paneeli.add(sisaPaneeli);       //vasen ylänurkka

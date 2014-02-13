@@ -15,7 +15,7 @@ public class Vieras {
         this.avec = avec;
     }
     
-    //getterit nimi- ja sukupuolitiedoille
+    //getterit nimi-, sukupuoli- ja avectiedoille
     public String getEtunimi(){
         return this.etunimi;
     }
@@ -35,12 +35,17 @@ public class Vieras {
         return etunimi + " " + sukunimi;
     }
     
-    //Kertoo onko tälle vieraalle jo määrätty tuoli
+    /**
+     * Onko tälle vieraalle jo määrätty tuoli
+     * @return true jo plaseeratuille vieraille
+     */
     public boolean onkoPlaseerattu(){
         return this.plaseerattu;
     }
     
-    //Vieras muuttuu plaseeratuksi
+    /**
+     * Muuttaa vieraan statuksen plaseeratuksi
+     */
     public void plaseeraa(){
         this.plaseerattu = true;
     }
