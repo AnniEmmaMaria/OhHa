@@ -44,10 +44,10 @@ plaseeraa()</y:MethodLabel>
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="112.0" width="164.0" x="243.0" y="-6.0"/>
-          <y:Fill color="#00FF00" transparent="false"/>
+          <y:Geometry height="155.8403451995685" width="181.6051779935276" x="243.0" y="-49.84034519956851"/>
+          <y:Fill color="#CC99FF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="114.55078125" x="24.724609375" y="3.0">VieraslistanLukija<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="114.55078125" x="33.5271983717638" y="3.0">VieraslistanLukija<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -58,8 +58,10 @@ plaseeraa()</y:MethodLabel>
             <y:AttributeLabel>File vieraslista
 Scanner listanLukija
 KaikkiVieraat kaikki</y:AttributeLabel>
-            <y:MethodLabel>+ luoTekstistaOliotListaksi()
-</y:MethodLabel>
+            <y:MethodLabel>+ getVieraslista()
++ luoTekstistaOliotListaksi()
+- luoTekstirivistaVierasOliot()
++virheilmoitus()</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>
@@ -132,11 +134,34 @@ tulostaIstujat(poyta)</y:MethodLabel>
         </y:UMLClassNode>
       </data>
     </node>
+    <node id="n5">
+      <data key="d4"/>
+      <data key="d6">
+        <y:UMLClassNode>
+          <y:Geometry height="111.90938511326863" width="155.5889967637541" x="-14.904530744336597" y="64.22653721682846"/>
+          <y:Fill color="#CC99FF" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" modelName="custom" textColor="#000000" visible="true" width="69.74267578125" x="42.92316049125205" y="3.0">PoytaLista<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.03703090122767855" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:UML clipContent="true" constraint="" omitDetails="false" stereotype="" use3DEffect="false">
+            <y:AttributeLabel>Vieras istuja</y:AttributeLabel>
+            <y:MethodLabel>lisaaPoyta()
+getPoytalista()
+tulostaListaltaPoytaNro(int)</y:MethodLabel>
+          </y:UML>
+        </y:UMLClassNode>
+      </data>
+    </node>
     <edge id="e0" source="n1" target="n0">
       <data key="d8"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="56.0" tx="0.0" ty="-81.2313915857605"/>
+          <y:Path sx="0.0" sy="77.92017259978421" tx="0.0" ty="-81.2313915857605"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="diamond" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -175,6 +200,17 @@ tulostaIstujat(poyta)</y:MethodLabel>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-42.58414239482204" sy="-0.0" tx="112.83171521035598" ty="-0.0"/>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="none"/>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n5" target="n2">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>

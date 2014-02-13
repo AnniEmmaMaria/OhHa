@@ -48,7 +48,7 @@ public class PoytienLuoja implements ActionListener{
         //Kasataan String, jossa on luodut pöydät allekkain
         String tilasto = "";
         int tuolienSumma = 0;
-        for(Poyta yksiPoyta : this.poytalista.annaPoytalista()){
+        for(Poyta yksiPoyta : this.poytalista.getPoytalista()){
             tilasto = tilasto + yksiPoyta.toString() + "\n";
             
             tuolienSumma = tuolienSumma + yksiPoyta.getTuolimaara();

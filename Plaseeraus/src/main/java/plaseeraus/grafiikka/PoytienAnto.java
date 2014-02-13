@@ -18,12 +18,12 @@ import javax.swing.border.EmptyBorder;
 import plaseeraus.logiikka.PoytaLista;
 
 //Käyttäjä määrittää tilan pöytien tuolimäärät
-public class PoytienLisays implements Runnable {
+public class PoytienAnto implements Runnable {
 
     private JFrame ruutu;
-    private PoytaLista poytalista;
+    private final PoytaLista poytalista;
 
-    public PoytienLisays(PoytaLista tyhjaPoytalista) {
+    public PoytienAnto(PoytaLista tyhjaPoytalista) {
         this.poytalista = tyhjaPoytalista;
     }
 
@@ -101,7 +101,7 @@ public class PoytienLisays implements Runnable {
         tuoliTilasto.add(tuolienSumma);
         
         //Keskimmäisessä gridissä on nappula
-        JButton uusiPoyta = new JButton("Lisää uusi pöytä");
+        JButton uusiPoyta = new JButton("Lisää pöytä");
         uusiPoyta.addActionListener(new PoytienLuoja(vastauskentta, this.poytalista, poydatListana, tuolienSumma));
 
         //Täytetään paneelin 3*2 lokeroa

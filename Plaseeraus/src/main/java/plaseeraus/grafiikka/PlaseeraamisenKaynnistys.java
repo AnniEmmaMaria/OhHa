@@ -20,7 +20,7 @@ public class PlaseeraamisenKaynnistys implements ActionListener{
         Plaseeraaja plaseeraaja = new Plaseeraaja();
         
         //Käydään pöytälista läpi plaseeraten pöydät
-        for(Poyta yksiPoyta : this.poytalista.annaPoytalista()){
+        for(Poyta yksiPoyta : this.poytalista.getPoytalista()){
             plaseeraaja.plaseeraa(yksiPoyta);
             System.out.println("PÖYDÄSSÄ ISTUVAT");
             yksiPoyta.getIstujat();

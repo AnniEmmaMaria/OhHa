@@ -17,13 +17,11 @@ public class VieraslistanLukija {
      */
     public VieraslistanLukija() {
         this.vieraslista = new File("vieraslista.txt");
-
         try {
             listanLukija = new Scanner(vieraslista);
         } catch (FileNotFoundException e) {
             System.out.println("Tiedostoa ei löytynyt");
-        }
-        
+        } 
         this.listaVieraista = new ArrayList<>();
     }
 
@@ -53,7 +51,7 @@ public class VieraslistanLukija {
     /**
      * Luo yhdestä tekstirivistä Vieras-olion etsimällä attribuutit
      * (etu- ja sukunimi, sukupuoli, avec) 
-     * @param txt-tiedostosta luettu yksi tekstirivi
+     * @param .txt-tiedostosta luettu yksi tekstirivi
      * @return rivin tiedoista luodun Vieras-olion
      */
     private Vieras luoTekstirivistaVierasOlio(String tekstirivi) {

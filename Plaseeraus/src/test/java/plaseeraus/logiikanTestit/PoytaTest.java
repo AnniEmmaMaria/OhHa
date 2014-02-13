@@ -47,7 +47,7 @@ public class PoytaTest {
 
     @Test
     public void toStringTulostuu() {
-        assertEquals("4 tuolin pöytä.", neljanPoyta.toString());
+        assertEquals("4 tuolin pöytä", neljanPoyta.toString());
     }
 
     //Tuolilistan luonti

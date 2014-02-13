@@ -15,7 +15,7 @@ public class PoytaLista {
         this.poydat.add(uusiPoyta);
     }
     
-    public ArrayList<Poyta> annaPoytalista(){
+    public ArrayList<Poyta> getPoytalista(){
         return this.poydat;
     }
     

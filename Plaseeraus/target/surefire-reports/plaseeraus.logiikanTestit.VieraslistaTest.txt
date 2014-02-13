@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: plaseeraus.logiikanTestit.VieraslistaTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.013 sec <<< FAILURE!
-initializationError(plaseeraus.logiikanTestit.VieraslistaTest)  Time elapsed: 0.001 sec  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.01 sec <<< FAILURE!
+initializationError(plaseeraus.logiikanTestit.VieraslistaTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NoClassDefFoundError: Lplaseeraus/logiikka/vieraidenMaaritys/Vieras;
 	at java.lang.Class.getDeclaredFields0(Native Method)
 	at java.lang.Class.privateGetDeclaredFields(Class.java:2397)
