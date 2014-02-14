@@ -29,7 +29,10 @@ public class Vieras {
         return this.avec;
     }
     
-    //toString vieraan nimen tulostukseen
+    /**
+     * toString palauttaa vain vieraan nimen
+     * @return 
+     */
     @Override
     public String toString(){
         return etunimi + " " + sukunimi;

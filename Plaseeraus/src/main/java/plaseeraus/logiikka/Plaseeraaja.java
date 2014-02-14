@@ -13,7 +13,11 @@ public class Plaseeraaja {
     }
 
     
-    //PLASEERAA PÖYTIEN TUOLEIHIN ISTUJAT
+    /**
+     * Plaseeraa vieraslistalta vieraat annettuun pöytään
+     * @param poyta jonka tuoleille valitaan vieraat istumaan 
+     */
+    
     public void plaseeraa(Poyta poyta) {
         int koko = poyta.getTuolimaara();
 
@@ -28,18 +32,13 @@ public class Plaseeraaja {
         }
     }
         
-
-    //Ota Vieras-oliot sisältävä ArrayList "Vieraslista" lukijalla
-    public ArrayList<Vieras> annaVieraslista() {
-        //Luodaan VieraslistanLukijassa ArrayListin sisältö ja otetaan lista ulos
-        lukija.luoTekstistaOliotListaksi();
-        
-        return lukija.getVieraslista();
-    }
     
-    
-    //Valitsee alkuperäiseltä vieraslistalta uudeksi listaksi plaseeraamattomat 
-    //oikeaa sukupuolta olevat Vieras-oliot
+    /**
+     * Valitsee alkuperäiseltä vieraslistalta uudeksi listaksi ne vieraat, 
+     * joiden sallitaan istua tälletuolille
+     * @param tuolinInd plaseerausvuorossa olevan tuolin numero (0,1,..)
+     * @return karsittu vieraslista
+     */
     private ArrayList<Vieras> listaaSallitutVieraat(int tuolinInd) {
         
         ArrayList<Vieras> sallitutIstujat = new ArrayList<>();
@@ -74,15 +73,21 @@ public class Plaseeraaja {
         return sallitutIstujat.get(arvottuLuku);
     }
     
-    
-    //Tulostaa pöydän istujat
-    public void tulostaIstujat(Poyta poyta){
-        ArrayList<Tuoli> tuolit = poyta.getTuolilista();
+    //Ota Vieras-oliot sisältävä ArrayList "Vieraslista" lukijalla
+    public ArrayList<Vieras> annaVieraslista() {
+        //Luodaan VieraslistanLukijassa ArrayListin sisältö ja otetaan lista ulos
+        lukija.luoTekstistaOliotListaksi();
         
-        for(Tuoli tuoli:tuolit){
-            System.out.println(tuoli);
-            
-        }
+        return lukija.getVieraslista();
     }
     
-}
+//    //Tulostaa pöydän istujat
+//    public void tulostaIstujat(Poyta poyta){
+//        ArrayList<Tuoli> tuolit = poyta.getTuolilista();
+//        
+//        for(Tuoli tuoli:tuolit){
+//            System.out.println(tuoli);
+//            
+//        }
+    }
+    

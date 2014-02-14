@@ -8,22 +8,29 @@ public class Tuoli {
     }
     
     
-    //Kuka tuolissa istuu?
+
     public Vieras getIstuja(){
         return this.istuja;
+    }     
+    /**
+     * Tuolin toString palauttaa siinä istuvan vieraan toStringin
+     * @return 
+     */
+    @Override
+    public String toString(){
+        return this.istuja.toString();
     }
     
     
-    //Tuoli ottaa istujan
+    /**
+     * Asettaa tuoliin Vieras-olion istumaan
+     * @param istuja = istujaksi valittu vieras
+     */
     public void otaIstuja(Vieras istuja){
         this.istuja = istuja;
         istuja.plaseeraa();
     }
-    
-    @Override
-    public String toString(){
-        return this.istuja.toString();
-    } 
+ 
           
     
 }
