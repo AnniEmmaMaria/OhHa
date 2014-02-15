@@ -93,7 +93,7 @@ public class PoytienAnto implements Runnable {
         JPanel tuoliTilasto = new JPanel(new GridBagLayout());
         
         poytaTilasto.add(new JLabel("Tallennetut pöydät:          "));
-        JTextArea poydatListana = new JTextArea();
+        JTextField poydatListana = new JTextField();
         poytaTilasto.add(poydatListana);
         
         tuoliTilasto.add(new JLabel("Paikkoja yhteensä:       "));

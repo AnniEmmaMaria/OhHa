@@ -21,16 +21,17 @@ public class Tilapiirros extends JPanel implements Runnable{
         ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ruutu.setPreferredSize(new Dimension(1000, 700));
         
+        luoRuutu(ruutu.getContentPane());
+        
         ruutu.pack();
         ruutu.setVisible(true);
     }
     
     @Override
-    protected void paintComponent(Graphics grafiikka){
-        super.paintComponent(grafiikka);
+    protected void paintComponent(Graphics graphics){
+        super.paintComponent(graphics);
         
-        grafiikka.setColor(Color.RED);
-        grafiikka.drawRect(10, 20, 30, 40);
+        graphics.fillRect(0, 0, 50, 60);
     }
     
     /**
