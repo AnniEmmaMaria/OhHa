@@ -2,6 +2,7 @@ package plaseeraus.grafiikka;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.SwingUtilities;
 import plaseeraus.logiikka.Plaseeraaja;
 import plaseeraus.logiikka.PoytaLista;
 import plaseeraus.logiikka.Poyta;
@@ -27,6 +28,14 @@ public class PlaseeraamisenKaynnistys implements ActionListener{
             System.out.println("");
         }
         
+        /**
+         * Piirretään pöytäksrtta käyttäjälle Tilapiirros-framena
+         */
+        Tilapiirros poytakartta = new Tilapiirros();
+        SwingUtilities.invokeLater(poytakartta);
+        
+        
     }
+    
     
 }

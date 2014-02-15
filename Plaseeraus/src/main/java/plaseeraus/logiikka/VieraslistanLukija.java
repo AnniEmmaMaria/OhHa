@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import plaseeraus.grafiikka.Virheilmoitus;
 
 public class VieraslistanLukija {
     File vieraslista;            
@@ -91,7 +92,10 @@ public class VieraslistanLukija {
     
     //Virheilmoituksen laukaisumetodi
     public void virheilmoitus(String aiheuttaja){
-        System.out.println("Vieraslistassa virhe kohdassa " + aiheuttaja + ". Ei osaa lukea sitä");
+        System.out.println("ONKLEMA");
+        String virheteksti = "Vieraslistassa virhe kohdassa " + aiheuttaja + ". Ei osaa lukea sitä";
+        Virheilmoitus virheilmoitusruutu = new Virheilmoitus(virheteksti);
+        
     }
 
 }
