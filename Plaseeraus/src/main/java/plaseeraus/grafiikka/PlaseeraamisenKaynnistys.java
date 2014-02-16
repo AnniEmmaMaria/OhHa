@@ -31,7 +31,7 @@ public class PlaseeraamisenKaynnistys implements ActionListener{
         /**
          * Piirretään pöytäksrtta käyttäjälle Tilapiirros-framena
          */
-        Tilapiirros poytakartta = new Tilapiirros();
+        Tilapiirros poytakartta = new Tilapiirros(this.poytalista);
         SwingUtilities.invokeLater(poytakartta);
         
         

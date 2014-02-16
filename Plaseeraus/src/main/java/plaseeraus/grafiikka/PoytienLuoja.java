@@ -11,10 +11,10 @@ import plaseeraus.logiikka.Poyta;
 public class PoytienLuoja implements ActionListener{
     private final JTextArea vastausKentta;
     private PoytaLista poytalista;
-    private JTextField poytaTilasto;
+    private JTextArea poytaTilasto;
     private JTextField tuoliTilasto;
     
-    public PoytienLuoja(JTextArea vastausKentta, PoytaLista poytalista, JTextField poytaTilastoKentta, JTextField tuolienSumma){
+    public PoytienLuoja(JTextArea vastausKentta, PoytaLista poytalista, JTextArea poytaTilastoKentta, JTextField tuolienSumma){
         this.vastausKentta = vastausKentta;
         this.poytalista = poytalista;
         this.poytaTilasto = poytaTilastoKentta;

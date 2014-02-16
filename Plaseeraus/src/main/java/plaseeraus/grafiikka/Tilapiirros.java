@@ -8,11 +8,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import plaseeraus.logiikka.Poyta;
+import plaseeraus.logiikka.PoytaLista;
 
 public class Tilapiirros extends JPanel implements Runnable{
     private JFrame ruutu;
+    private final PoytaLista poytalista;
 
-    public Tilapiirros() {
+    public Tilapiirros(PoytaLista poytalista) {
+        this.poytalista = poytalista;
     }
     
     @Override
@@ -26,28 +29,44 @@ public class Tilapiirros extends JPanel implements Runnable{
         ruutu.pack();
         ruutu.setVisible(true);
     }
-    
-    @Override
-    protected void paintComponent(Graphics graphics){
-        super.paintComponent(graphics);
-        
-        graphics.fillRect(0, 0, 50, 60);
-    }
-    
     /**
      * Luodaan tilakartan ruudun pohja
      * @param container
      */
     public void luoRuutu(Container container){
-        container.add(new Tilapiirros());
+        container.add(new Tilapiirros(poytalista));
     }
     
+    
+    @Override
+    protected void paintComponent(Graphics graphics){
+        super.paintComponent(graphics);
+        
+        /**
+         * Otetaan loopilla kaikki listatut pöydät piirrettäviksi järjestyksessä.
+         */
+        int jarjNumero = 0;
+        for(Poyta piirrettavaPoyta : this.poytalista.getPoytalista()){
+            piirraPoyta(piirrettavaPoyta, jarjNumero , graphics);
+            jarjNumero++;
+        }
+        
+        graphics.drawString(TOOL_TIP_TEXT_KEY, WIDTH, WIDTH);
+        
+        
+    }
+    
+    
     /**
-     * Piirtää ruudulle annetun pöydän ja nimeää tuolien istujat siihen
+     * Piirtää ruudulle annetun pöydän ja nimeää tuolien istujat siihen.
+     * @param poyta vuorossa oleva Poyta-olio
+     * @param jarjNumero monesko pöytä on salissa(määrää x-koordinaatin)
+     * @param graphics
      */
-    public void piirraPoyta(Poyta poyta){
+    public void piirraPoyta(Poyta poyta, int jarjNumero, Graphics graphics){
+        int koko = poyta.getTuolimaara();
         
-        
+        graphics.fillRect(30+jarjNumero*150, 16, 50, koko*50);
     }
 
 }
