@@ -26,12 +26,15 @@ public class Poyta {
     }
 
     /**
-     * Tulostetaan allekain pöydässä istuvien nimet
+     * Antaa listan pöytään plaseeratuista vieraista
+     * @return listana pöydässä istuvat vieras-oliot
      */
-    public void getIstujat() {
+    public ArrayList<Vieras> getIstujat() {
+        ArrayList<Vieras> istujat = new ArrayList<>();
         for (Tuoli tuoli : tuolit) {
-            System.out.println(tuoli);
+            istujat.add(tuoli.getIstuja());
         }
+        return istujat;
     }
 
     @Override

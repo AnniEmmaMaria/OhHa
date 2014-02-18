@@ -6,6 +6,7 @@ import javax.swing.SwingUtilities;
 import plaseeraus.logiikka.Plaseeraaja;
 import plaseeraus.logiikka.PoytaLista;
 import plaseeraus.logiikka.Poyta;
+import plaseeraus.logiikka.Vieras;
 
 public class PlaseeraamisenKaynnistys implements ActionListener{
     private final PoytaLista poytalista;
@@ -17,19 +18,20 @@ public class PlaseeraamisenKaynnistys implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Aletaan plaseeraamaan!");
         Plaseeraaja plaseeraaja = new Plaseeraaja();
-        
+
         //Käydään pöytälista läpi plaseeraten pöydät
         for(Poyta yksiPoyta : this.poytalista.getPoytalista()){
             plaseeraaja.plaseeraa(yksiPoyta);
-            System.out.println("PÖYDÄSSÄ ISTUVAT");
-            yksiPoyta.getIstujat();
-            System.out.println("");
+
+//            for (Vieras yksiIstuja : yksiPoyta.getIstujat()){
+//                System.out.println(yksiIstuja);
+//            }
+//            System.out.println("");
         }
         
         /**
-         * Piirretään pöytäksrtta käyttäjälle Tilapiirros-framena
+         * Piirretään pöytäkartta käyttäjälle Tilapiirros-framena
          */
         Tilapiirros poytakartta = new Tilapiirros(this.poytalista);
         SwingUtilities.invokeLater(poytakartta);

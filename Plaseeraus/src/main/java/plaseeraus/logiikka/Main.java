@@ -7,6 +7,7 @@ import plaseeraus.grafiikka.Tilapiirros;
 public class Main {
 
     public static void main(String[] args) {
+
         /**
          * Luodaan näiden juhlien pöytälista tyhjänä
          */
@@ -17,8 +18,8 @@ public class Main {
          */
         PoytienAnto poytienAnto = new PoytienAnto(poytalista);
         SwingUtilities.invokeLater(poytienAnto);
-//        
-//        Tilapiirros poytakartta = new Tilapiirros();
+        
+//        Tilapiirros poytakartta = new Tilapiirros(poytalista);
 //        SwingUtilities.invokeLater(poytakartta);
  
         
