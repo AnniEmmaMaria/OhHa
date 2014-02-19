@@ -109,7 +109,7 @@ public class PoytienAnto implements Runnable {
         paneeli.add(new JLabel());      //oikea ylänurkka = tyhjä
         paneeli.add(new JLabel());      //vasen keskikohta = tyhjä
         paneeli.add(uusiPoyta);         //oikea keskikohta = nappula
-        paneeli.add(poytaTilasto);     //vasen alanurkka = pöytätilasto
+        paneeli.add(poytaTilasto);      //vasen alanurkka = pöytätilasto
         paneeli.add(tuoliTilasto);      //oikea alanurkka = tuolitilasto
 
         return paneeli;
