@@ -104,28 +104,27 @@ public class Tilapiirros extends JPanel implements Runnable {
         graphics.setColor(Color.BLACK);
         int istujienLkm = sivunIstujat.size();
 
-        //x-koordinaatin laskukaava riippuu sivusta. Oletuksena 1. sivu
+        //vasen sivu
         int xKoordinaatti = 20 + 310 * moneskoPoyta;
-        int yKoordinaatti = 30 + 40 * (istujienLkm - 1);
-        if (kumpiSivu == 2) {
+        int yKoordinaatti = 60 + 80 * (istujienLkm - 1);
+
+        if (kumpiSivu == 1) {
+            for (Vieras istuja : sivunIstujat) {
+                graphics.drawString(istuja.toString(), xKoordinaatti, yKoordinaatti);
+
+                yKoordinaatti = yKoordinaatti - 80;
+            }
+
+            //oikea sivu
+        } else {
             xKoordinaatti = 180 + 310 * moneskoPoyta;
-            yKoordinaatti = 30;
-        }
+            yKoordinaatti = 60;
+            for (Vieras istuja : sivunIstujat) {
+                graphics.drawString(istuja.toString(), xKoordinaatti, yKoordinaatti);
+                yKoordinaatti = yKoordinaatti + 80;
 
-        //y-koordinaatti riippuu vain tuolista, joista alin on ensimmäinen    
-        
-
-        for (Vieras istuja : sivunIstujat) {
-//            System.out.println("x = " + xKoordinaatti);
-//            System.out.println("y = " + yKoordinaatti);
-//            graphics.fillOval(xKoordinaatti, yKoordinaatti, 10, 10);
-            graphics.drawString(istuja.toString(), xKoordinaatti, yKoordinaatti);
-            yKoordinaatti = yKoordinaatti - 20;
-            if(kumpiSivu == 2){
-                yKoordinaatti = yKoordinaatti + 40;
             }
         }
-
     }
 
     /**
