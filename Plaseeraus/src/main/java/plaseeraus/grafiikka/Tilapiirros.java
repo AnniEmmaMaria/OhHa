@@ -29,7 +29,7 @@ public class Tilapiirros extends JPanel implements Runnable {
     public void run() {
         ruutu = new JFrame("Juhlatila");
         ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        ruutu.setPreferredSize(new Dimension(1000, 700));
+        ruutu.setPreferredSize(new Dimension(1400, 700));
 
         luoRuutu(ruutu.getContentPane());
 
@@ -88,7 +88,7 @@ public class Tilapiirros extends JPanel implements Runnable {
         int koko = poyta.getTuolimaara();
 
         graphics.setColor(Color.GRAY);
-        graphics.fillRect(130 + jarjNumero * 310, 20, 50, koko * 40);
+        graphics.fillRect(150 + jarjNumero * 380, 30, 50, koko * 20);
 
     }
 
@@ -105,23 +105,23 @@ public class Tilapiirros extends JPanel implements Runnable {
         int istujienLkm = sivunIstujat.size();
 
         //vasen sivu
-        int xKoordinaatti = 20 + 310 * moneskoPoyta;
-        int yKoordinaatti = 60 + 80 * (istujienLkm - 1);
+        int xKoordinaatti = 20 + 360 * moneskoPoyta;
+        int yKoordinaatti = 50 + 40 * (istujienLkm - 1);
 
         if (kumpiSivu == 1) {
             for (Vieras istuja : sivunIstujat) {
                 graphics.drawString(istuja.toString(), xKoordinaatti, yKoordinaatti);
 
-                yKoordinaatti = yKoordinaatti - 80;
+                yKoordinaatti = yKoordinaatti - 40;
             }
-
-            //oikea sivu
+        //oikea sivu
         } else {
-            xKoordinaatti = 180 + 310 * moneskoPoyta;
-            yKoordinaatti = 60;
+            xKoordinaatti = 220 + 380 * moneskoPoyta;
+            yKoordinaatti = 50;
             for (Vieras istuja : sivunIstujat) {
                 graphics.drawString(istuja.toString(), xKoordinaatti, yKoordinaatti);
-                yKoordinaatti = yKoordinaatti + 80;
+                
+                yKoordinaatti = yKoordinaatti + 40;
 
             }
         }
