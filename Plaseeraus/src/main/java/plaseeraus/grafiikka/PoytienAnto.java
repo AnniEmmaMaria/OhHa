@@ -94,10 +94,6 @@ public class PoytienAnto implements Runnable {
         vasenYla.add(vastauskentta);
         vasenYla.add(kplTuoleja);
         
-        //Oikealla keskellä: nappula "Lisää pöytä"
-        JButton uusiPoyta = new JButton("Lisää pöytä");
-        uusiPoyta.addActionListener(new PoytienLuoja(vastauskentta, this.poytalista, poydatListana, tuolienSumma));
-
         
         //Alimmissa grideissä on paneeleina jo lisätyt pöydät ja tuolien summa
         JPanel poytaTilasto = new JPanel(new GridLayout());
@@ -111,9 +107,13 @@ public class PoytienAnto implements Runnable {
         JTextField tuolienSumma = new JTextField();
         tuoliTilasto.add(tuolienSumma);
         
+        
+        //Oikealla keskellä: nappula "Lisää pöytä"
+        JButton uusiPoyta = new JButton("Lisää pöytä");
+        uusiPoyta.addActionListener(new PoytienLuoja(vastauskentta, this.poytalista, poydatListana, tuolienSumma));
        
         //Täytetään paneelin 3*2 lokeroa
-        paneeli.add(vasenYla);       //vasen ylänurkka
+        paneeli.add(vasenYla);
         paneeli.add(new JLabel());      //oikea ylänurkka = tyhjä
         paneeli.add(new JLabel());      //vasen keskikohta = tyhjä
         paneeli.add(uusiPoyta);         //oikea keskikohta = nappula
@@ -130,9 +130,12 @@ public class PoytienAnto implements Runnable {
         JButton kaikkiPoydatLisatty = new JButton("Kaikki pöydät lisätty");
         kaikkiPoydatLisatty.addActionListener(new PlaseeraamisenKaynnistys(this.poytalista));
 
-        paneeli.add(new JLabel(""));
+        paneeli.add(new JLabel());
+         paneeli.add(new JLabel());
+          paneeli.add(new JLabel());
+          paneeli.add(new JLabel());
         paneeli.add(kaikkiPoydatLisatty);
-        paneeli.add(new JLabel(""));
+        paneeli.add(new JLabel());
         
         return paneeli;
     }

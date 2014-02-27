@@ -6,7 +6,6 @@ Jukka Viirunen m
 Eemeli Nieminen m
 Paula Drew n
 Aurora Ruusunen n
-Pocahontas Intiaani n
 John Smith m 
 Aku Ankka m
 Iines Ankka n
@@ -24,4 +23,7 @@ Hessu Hopo m
 Heluna Ammu n
 Roope Ankka m
 Kaino-Vieno Ankka n
-Peppi Pitk‰tossu n
+Peppi Pitk√§tossu n
+Klaara Kotko n
+Polle Koninkaulus m
+Anni Manninen n

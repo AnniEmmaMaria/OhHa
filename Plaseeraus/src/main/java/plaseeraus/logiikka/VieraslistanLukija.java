@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.SwingUtilities;
 import plaseeraus.grafiikka.Virheilmoitus;
 
 public class VieraslistanLukija {
@@ -29,6 +30,24 @@ public class VieraslistanLukija {
     //Anna vieraslista, johon tekstitiedoston vieraat tallennettiin
     public ArrayList<Vieras> getVieraslista() {
         return this.listaVieraista;
+    }
+    
+    /**
+     * Etsitään nimistringin perusteella vieraslistalta Vieras-olio
+     * @param haettuNimi String "Etunumi Sukunimi" -muodossa haettu Vieras
+     * @return 
+     */
+    public Vieras getVierasNimenPerusteella(String haettuNimi){
+        Vieras haettuVieras = null;
+        
+        for(Vieras yksiVieras:this.listaVieraista){
+            if(yksiVieras.toString().equals(haettuNimi)){
+                haettuVieras = yksiVieras;
+            }else{
+                Virheilmoitus virheRuutu = new Virheilmoitus("avec");
+            }
+        }
+        return haettuVieras;
     }
 
     /**
@@ -88,9 +107,9 @@ public class VieraslistanLukija {
 
     //Virheilmoituksen laukaisumetodi
     public void virheilmoitus(String aiheuttaja) {
-        System.out.println("ONKLEMA");
-        String virheteksti = "Vieraslistassa virhe kohdassa " + aiheuttaja + ". Ei osaa lukea sitä";
-        Virheilmoitus virheilmoitusruutu = new Virheilmoitus(virheteksti);
+        String virheteksti = "Vieraslistassa virhe kohdassa " + aiheuttaja;
+        Virheilmoitus virheRuutu = new Virheilmoitus(virheteksti);
+        SwingUtilities.invokeLater(virheRuutu);
 
     }
 

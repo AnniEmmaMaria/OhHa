@@ -1,7 +1,7 @@
 package plaseeraus.logiikka;
 
 import javax.swing.SwingUtilities;
-import plaseeraus.grafiikka.PoytienAnto;
+import plaseeraus.grafiikka.annaPoydat;
 
 public class Main {
 
@@ -15,7 +15,7 @@ public class Main {
         /**
          * Antaa ensimmäisen ruudun, jossa annetaan juhlien pöydät
          */
-        PoytienAnto poytienAnto = new PoytienAnto(poytalista);
+        annaPoydat poytienAnto = new annaPoydat(poytalista);
         SwingUtilities.invokeLater(poytienAnto);
 
     }

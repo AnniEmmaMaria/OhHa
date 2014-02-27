@@ -17,44 +17,48 @@ public class Plaseeraaja {
     }
 
     /**
-     * Plaseeraa vieraslistalta vieraat annettuun pöytään
+     * Määrää istujan tuolille kerrallaan. Ottaavieraslistalta sallitut vieraat,
+     * arpoo näistä yhden ja istuttaa tuolille
      *
      * @param poyta jonka tuoleille valitaan vieraat istumaan
      */
     public void plaseeraa(Poyta poyta) {
         int koko = poyta.getTuolimaara();
+        Vieras valittuIstuja = null; 
+        ArrayList<Vieras> sallitutIstujat = null;      
 
-        //Tuoli kerrallaan
         for (int tuolinInd = 0; tuolinInd < koko; tuolinInd++) {
-            //määritetään sallitut istujat
-            ArrayList<Vieras> sallitutIstujat = listaaSallitutVieraat(tuolinInd);
-            //Arvotaan heistä yksi
-            Vieras valittuIstuja = arvoIstuja(sallitutIstujat);
-            //Istutetaan valittu tuolille
+            sallitutIstujat = listaaSallitutVieraat(tuolinInd, valittuIstuja);
+            valittuIstuja = arvoIstuja(sallitutIstujat);
             poyta.getTuoli(tuolinInd).otaIstuja(valittuIstuja);
         }
     }
 
     /**
      * Valitsee alkuperäiseltä vieraslistalta uudeksi listaksi ne vieraat,
-     * joiden sallitaan istua tälletuolille
+     * joiden sallitaan istua tälle tuolille
      *
      * @param tuolinInd plaseerausvuorossa olevan tuolin numero (0,1,..)
      * @return karsittu vieraslista
      */
-    private ArrayList<Vieras> listaaSallitutVieraat(int tuolinInd) {
-        
+    private ArrayList<Vieras> listaaSallitutVieraat(int tuolinInd, Vieras edellinenIstuja) {
+
         ArrayList<Vieras> sallitutIstujat = new ArrayList<>();
         ArrayList<Vieras> kaikkiVieraat = annaVieraslista();
-               
-        //Käydään kaikki vieraat sis. lista läpi ja poimitaan sopivat vieraat
+        
+        //Huomioidaan, että nainen saa avecinsa viereensä
+//        if(!edellinenIstuja.getAvec().equals("")){
+//            
+//        }
+
         for (Vieras vieras : kaikkiVieraat) {
             //Vain paikattomat vieraat kelpaavat
             if (vieras.onkoPlaseerattu() == false) {
 
-                //mies parittomille tuoleille
+                //nainen parillisille tuoleille
                 if (tuolinInd % 2 == 0 && vieras.getSukupuoli() == Sukupuoli.NAINEN) {
                     sallitutIstujat.add(vieras);
+                    
                 } else if (tuolinInd % 2 != 0 && vieras.getSukupuoli() == Sukupuoli.MIES) {
                     sallitutIstujat.add(vieras);
                 }
@@ -74,9 +78,9 @@ public class Plaseeraaja {
         return sallitutIstujat.get(arvottuLuku);
     }
 
-
     /**
      * VieraslistanLukija luo tekstitiedoston vieraslistasta Vieras-oliot
+     *
      * @return Vieras-oliot listattuna ArrayListiksi
      */
     public ArrayList<Vieras> annaVieraslista() {
