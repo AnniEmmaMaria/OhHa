@@ -32,23 +32,6 @@ public class VieraslistanLukija {
         return this.listaVieraista;
     }
     
-    /**
-     * Etsitään nimistringin perusteella vieraslistalta Vieras-olio
-     * @param haettuNimi String "Etunumi Sukunimi" -muodossa haettu Vieras
-     * @return 
-     */
-    public Vieras getVierasNimenPerusteella(String haettuNimi){
-        Vieras haettuVieras = null;
-        
-        for(Vieras yksiVieras:this.listaVieraista){
-            if(yksiVieras.toString().equals(haettuNimi)){
-                haettuVieras = yksiVieras;
-            }else{
-                Virheilmoitus virheRuutu = new Virheilmoitus("avec");
-            }
-        }
-        return haettuVieras;
-    }
 
     /**
      * Luetaan tiedoston rivit yksi kerrallaan Tehdään riveistä Vieras-oliot
