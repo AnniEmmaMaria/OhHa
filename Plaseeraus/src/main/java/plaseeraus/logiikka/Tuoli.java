@@ -6,8 +6,7 @@ public class Tuoli {
     public Tuoli(){
         this.istuja = null;       
     }
-    
-    
+
 
     public Vieras getIstuja(){
         return this.istuja;
