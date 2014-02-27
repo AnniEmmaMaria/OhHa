@@ -29,7 +29,7 @@ public class Tilapiirros extends JPanel implements Runnable {
     public void run() {
         ruutu = new JFrame("Juhlatila");
         ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        ruutu.setPreferredSize(new Dimension(1400, 700));
+        ruutu.setPreferredSize(new Dimension(1300, 700));
 
         luoRuutu(ruutu.getContentPane());
 

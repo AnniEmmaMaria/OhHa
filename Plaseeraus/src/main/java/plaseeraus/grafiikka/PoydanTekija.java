@@ -24,11 +24,7 @@ public class PoydanTekija implements ActionListener {
         this.tuolejaYht = tuolejaYht;
     }
 
-    /**
-     * 
-     * @param e 
-     * @return  
-     */
+
     @Override
     public void actionPerformed(ActionEvent e) {
                 

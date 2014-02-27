@@ -80,8 +80,8 @@ public class VieraslistanLukija {
         String avec = "";
 
         //Jos kyseisellä vieraalla on kuitenkin määritetty avec
-        if (tekstirivi.contains("(avec: ")) {
-            int avecinNimenAlkuInd = tekstirivi.indexOf("(avec: ") + 7;
+        if (tekstirivi.contains("avec: ")) {
+            int avecinNimenAlkuInd = tekstirivi.indexOf("avec: ") + 6;
             avec = tekstirivi.substring(avecinNimenAlkuInd);
         }
 
@@ -90,7 +90,7 @@ public class VieraslistanLukija {
 
     //Virheilmoituksen laukaisumetodi
     public void virheilmoitus(String aiheuttaja) {
-        String virheteksti = "Vieraslistassa virhe kohdassa " + aiheuttaja;
+        String virheteksti = "Vieraslistassa virhe kohdassa " + aiheuttaja +"";
         Virheilmoitus virheRuutu = new Virheilmoitus(virheteksti);
         SwingUtilities.invokeLater(virheRuutu);
 

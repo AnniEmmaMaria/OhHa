@@ -23,11 +23,11 @@ import plaseeraus.logiikka.PoytaLista;
  * Luodaan JFrame pöytien antamiseen ja tuodaan toistaiseksi tyhjä PoytaLista,
  * johon annetut pöydät lisätään
  */
-public class annaPoydat implements Runnable {
+public class AnnaPoydat implements Runnable {
     JFrame ruutu;
     PoytaLista poytaLista;
 
-    public annaPoydat(PoytaLista poytaLista) {
+    public AnnaPoydat(PoytaLista poytaLista) {
         this.poytaLista = poytaLista;
 
     }
