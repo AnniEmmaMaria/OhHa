@@ -7,6 +7,10 @@ PLaseeraajaTest.java
 -Osaako lukea annettua .txt-tiedostoa
 
 
+PoytaListaTest.java
+-lisääkö listaan pöydän
+-ottaako listalta pöydän
+
 PoytaTest.java
 
 -getterit tuolimäärän, tuolin ja tuolilistan hakuun

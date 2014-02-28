@@ -2,8 +2,11 @@ package plaseeraus.logiikka;
 
 import java.util.ArrayList;
 
+/**
+ * Säilyttää yhden juhlan pöydät listana
+ * @author Anni Jokiniemi
+ */
 public class PoytaLista {
-
     private final ArrayList<Poyta> poydat;
 
     public PoytaLista() {

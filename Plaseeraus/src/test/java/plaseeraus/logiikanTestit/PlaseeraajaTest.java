@@ -38,6 +38,11 @@ public class PlaseeraajaTest {
         assertEquals("Risto Reipas", ristoko.toString());
     }
     
+    @Test
+            public void etsiikoNiellaVieraan()
+    
+           
+    
     
     
 }
