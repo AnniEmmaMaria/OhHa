@@ -1,19 +1,20 @@
 package plaseeraus.logiikka;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Säilyttää yhden juhlan pöydät listana
  * @author Anni Jokiniemi
  */
 public class PoytaLista {
-    private final ArrayList<Poyta> poydat;
+    private final List<Poyta> poydat;
 
     public PoytaLista() {
         this.poydat = new ArrayList<>();
     }
 
-    public ArrayList<Poyta> getPoytalista() {
+    public List<Poyta> getPoytalista() {
         return this.poydat;
     }
 

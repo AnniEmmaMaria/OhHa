@@ -1,12 +1,11 @@
 /*
- * Tilastoi erilliseen ruutuun annetut p√∂yd√§t aina uuden p√∂yd√§n annon yhteydess√§
+ * Tilastoi erilliseen ruutuun annetut pˆyd‰t aina uuden p√∂yd√§n annon yhteydess√§
  */
 
 package plaseeraus.grafiikka;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,7 +28,7 @@ public class PoytaTilasto implements Runnable{
 
     @Override
     public void run() {
-        ruutu = new JFrame("Annetut p√∂yd√§t");
+        ruutu = new JFrame("Annetut pˆyd‰t");
         ruutu.setPreferredSize(new Dimension(400, 100));
         ruutu.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -51,9 +50,9 @@ public class PoytaTilasto implements Runnable{
             tuolienLkm = tuolienLkm + yksiPoyta.getTuolimaara();
         }
         
-        container.add(new JLabel("Lis√§tty: "));
+        container.add(new JLabel("Lis‰tty: "));
         container.add(new JLabel(poytalista.tulostaListaltaPoytaNro(poytienLkm-1)));
-        container.add(new JLabel("Paikkoja (yht) t√§h√§n menness√§: "));
+        container.add(new JLabel("Paikkoja (yht) t‰h‰n menness‰: "));
         container.add(new JLabel("" + tuolienLkm));
         
     }

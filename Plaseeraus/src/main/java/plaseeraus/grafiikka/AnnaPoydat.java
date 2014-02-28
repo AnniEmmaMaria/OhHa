@@ -1,5 +1,5 @@
 /*
- * Ensimm√§inen ilmestyv√§ ruutu, jossa k√§ytt√§j√§ antaa p√∂ytien koot
+ * Ensimm‰inen ilmestyv‰ ruutu, jossa k‰ytt‰j‰ antaa pˆytien koot
  */
 package plaseeraus.grafiikka;
 
@@ -17,8 +17,8 @@ import javax.swing.WindowConstants;
 import plaseeraus.logiikka.PoytaLista;
 
 /**
- * Luodaan JFrame p√∂ytien antamiseen ja tuodaan toistaiseksi tyhj√§ PoytaLista,
- * johon annetut p√∂yd√§t lis√§t√§√§n
+ * Luodaan JFrame pˆytien antamiseen ja tuodaan toistaiseksi tyhj‰ PoytaLista,
+ * johon annetut pˆyd‰t lis‰t‰‰n
  */
 public class AnnaPoydat implements Runnable {
     JFrame ruutu;
@@ -34,7 +34,7 @@ public class AnnaPoydat implements Runnable {
      */
     @Override
     public void run() {
-        ruutu = new JFrame("M√§√§rit√§ juhlatilan p√∂yd√§t");
+        ruutu = new JFrame("M‰‰rit‰ juhlatilan pˆyd‰t");
         ruutu.setPreferredSize(new Dimension(600, 500));
         ruutu.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,12 +67,12 @@ public class AnnaPoydat implements Runnable {
         JPanel paneeli = new JPanel(new GridLayout(2, 1));
 
         //Itse kysymys JLabelina isommalla fontilla
-        JLabel kysymys = new JLabel(" Anna p√∂yd√§n tuolien m√§√§r√§");
+        JLabel kysymys = new JLabel(" Anna pˆyd‰n tuolien m‰‰r‰");
         kysymys.setFont(new Font("Arial", 8, 20));
         paneeli.add(kysymys);
 
         //Vastausohjeet usealle riville jaettuna
-        String tarkennusteksti = "<HTML> Kirjoita kokonaislukuna, montako tuolia p√∂yd√§ss√§ on. P√∂yd√§n on oltava suorakulmainen ja tuolien sen kahdella sivulla. Tuolien lukum√§√§r√§n tulee olla parillinen ja v√§hint√§√§n 2</HTML>";
+        String tarkennusteksti = "<HTML> Kirjoita kokonaislukuna, montako tuolia pˆyd‰ss‰ on. Pˆyd‰n on oltava suorakulmainen ja tuolien sen kahdella sivulla. Tuolien lukum‰‰r‰n tulee olla parillinen ja v‰hint‰‰n 2</HTML>";
         JLabel tarkennus = new JLabel(tarkennusteksti);
         paneeli.add(tarkennus);
 
@@ -89,7 +89,7 @@ public class AnnaPoydat implements Runnable {
         JPanel paneeli = new JPanel(new GridBagLayout());
         
         //Vasen: Vastauskentt√§ (tuolim√§√§r√§lle) teksteineen
-        JLabel seuraavassaPoydassa = new JLabel("Seuraavassa p√∂yd√§ss√§ on ");
+        JLabel seuraavassaPoydassa = new JLabel("Seuraavassa pˆyd‰ss‰ on ");
         JTextArea vastauskentta = new JTextArea(1, 3);
         JLabel istumapaikkaa = new JLabel(" istumapaikkaa");
 
@@ -99,7 +99,7 @@ public class AnnaPoydat implements Runnable {
 
         //Oikea: Lis√§√§ p√∂yt√§ -nappula ja tyhj√§t reunat ymp√§rill√§
         JLabel tyhja = new JLabel("         ");
-        JButton LisaaPoyta = new JButton("Lis√§√§ annettu p√∂yt√§");
+        JButton LisaaPoyta = new JButton("Lis‰‰ annettu pˆyt‰");
         LisaaPoyta.addActionListener(new PoydanTekija(poytaLista, vastauskentta, 8));
 
         paneeli.add(tyhja);
@@ -118,7 +118,7 @@ public class AnnaPoydat implements Runnable {
     public JPanel PlaseerauksenAloitusNappi() {
         JPanel paneeli = new JPanel(new GridLayout(3, 3));
 
-        JButton kaikkiPoydatAnnettu = new JButton("Kaikki p√∂yd√§t annettu");
+        JButton kaikkiPoydatAnnettu = new JButton("Kaikki pˆyd‰t annettu");
         kaikkiPoydatAnnettu.addActionListener(new PlaseeraamisenKaynnistys(poytaLista));
 
         paneeli.add(new JLabel());

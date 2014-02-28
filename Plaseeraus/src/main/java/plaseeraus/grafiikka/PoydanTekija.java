@@ -33,7 +33,7 @@ public class PoydanTekija implements ActionListener {
         try{
             tuolimaara = Integer.parseInt(this.vastausKentta.getText());
         }catch(NumberFormatException e1){
-            Virheilmoitus virheRuutu = new Virheilmoitus("Tuolim√§√§r√§ksi ei annettu sopivaa lukua");
+            Virheilmoitus virheRuutu = new Virheilmoitus("Tuolim‰‰r‰ksi ei annettu sopivaa lukua");
             SwingUtilities.invokeLater(virheRuutu);
         }
         

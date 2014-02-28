@@ -44,7 +44,7 @@ public class Poyta {
 
     @Override
     public String toString() {
-        return this.tuolimaara + " tuolin pÃ¶ytÃ¤";
+        return this.tuolimaara + " tuolin pöytä";
     }
 
     /**
