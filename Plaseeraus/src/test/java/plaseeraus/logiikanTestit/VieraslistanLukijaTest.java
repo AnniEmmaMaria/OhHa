@@ -3,44 +3,54 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package plaseeraus.logiikanTestit;
 
-import org.junit.After;
-import org.junit.AfterClass;
+import java.util.ArrayList;
+import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import plaseeraus.logiikka.Sukupuoli;
+import plaseeraus.logiikka.Vieras;
+import plaseeraus.logiikka.VieraslistanLukija;
 
 /**
  *
  * @author Anni Jokiniemi
  */
 public class VieraslistanLukijaTest {
-    
+
+    VieraslistanLukija listanlukija;
+
     public VieraslistanLukijaTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    @Before
+    public void setUp() {
+        listanlukija = new VieraslistanLukija();
+    }
+
+    //Antaako vieraslistan
+    @Test
+    public void antaakoListan() {
+        ArrayList<Vieras> tyhjaVieraslista = listanlukija.getVieraslista();
+        tyhjaVieraslista.add(new Vieras("Eero", "Kurppa", Sukupuoli.MIES, "Katariina Raikas"));
+        int listaKoko = tyhjaVieraslista.size();
+        boolean onnistuiko = false;
+        if (listaKoko == 1) {
+            onnistuiko = true;
+        }
+
+        Assert.assertTrue(onnistuiko);
+    }
+
+    //Luoko rivistä tekstiä Vieras-olion 
+    @Test
+    public void luoTekstistaVieraan() {
+        String tekstirivi = "Irene Raikas n";
+        Vieras luotuVieras = listanlukija.luoTekstirivistaVierasOlio(tekstirivi);
+
+        Assert.assertEquals("Irene Raikas", luotuVieras.toString());
+
+    }
 }

@@ -1,33 +1,29 @@
-﻿Logiikan luokkien testit ovat pakkauksessa plaseeraus.logiikan testit luokkien mukaan nimettyinä.
+﻿Logiikan luokkien testit ovat pakkauksessa plaseeraus.logiikan testit luokkien mukaan nimettyinä. Grafiikkaa ja Mainia ei tarvinut testata.
+Monet testeistä ovat aika yksinkertaisia. Monesti, jos ohjelma ei toiminut halutulla tavalla, "piilotin" koodiin System.out.println-tekstejä ja etsin niillä ongelman. Oli vaikea keksiä JUnit testien aiheita.
 
-PLaseeraajaTest.java
-
+PlaseeraajaTest.java
 -Osaako plaseerata ensimmäiseksi naisen
 -Listaa naisen paikalle sallitut vieraat oikein
 -Osaako lukea annettua .txt-tiedostoa
-
 
 PoytaListaTest.java
 -lisääkö listaan pöydän
 -ottaako listalta pöydän
 
 PoytaTest.java
-
 -getterit tuolimäärän, tuolin ja tuolilistan hakuun
 -tuolin lisääminen pöytään
-
 
 TuoliTest.java
 
 -Tuolille voi istua
 -toString antaa Istujan nimen
 
-
 VierasTest.java
-
 -gettereiden testaukset
 -onnistuuko plaseerata (true/false -muuttuu)
 
-VierasListaTest.java
+VieraslistanLukijaTest.java
+-luoko tekstirivistä vieraan?
+-antaako vieraslistan
 
-Luokkaa ei ole olemassakaan enää, joten testit herjaavat

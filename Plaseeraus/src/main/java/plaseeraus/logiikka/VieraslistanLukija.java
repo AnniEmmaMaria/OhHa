@@ -24,7 +24,7 @@ public class VieraslistanLukija {
         try {
             listanLukija = new Scanner(vieraslista);
         } catch (FileNotFoundException e) {
-            virheilmoitus("tiedostoa ei ole");
+            virheilmoitus(".txt-tiedosto kansiossa");
         }
         this.listaVieraista = new ArrayList<>();
     }
@@ -54,10 +54,10 @@ public class VieraslistanLukija {
      * Luo yhdestä tekstirivistä Vieras-olion etsimällä attribuutit (etu- ja
      * sukunimi, sukupuoli, avec)
      *
-     * @param .txt-tiedostosta luettu yksi tekstirivi
+     * @param tekstirivi
      * @return rivin tiedoista luodun Vieras-olion
      */
-    private Vieras luoTekstirivistaVierasOlio(String tekstirivi) {
+    public Vieras luoTekstirivistaVierasOlio(String tekstirivi) {
 
         //Välilyönnit (2 kpl) erottavat 3 attribuuttia
         int ekanValinInd = tekstirivi.indexOf(" ");
@@ -91,7 +91,7 @@ public class VieraslistanLukija {
     }
 
     //Virheilmoituksen laukaisumetodi
-    private void virheilmoitus(String aiheuttaja) {
+    public void virheilmoitus(String aiheuttaja) {
         String virheteksti = "Vieraslistassa virhe kohdassa " + aiheuttaja +"";
         Virheilmoitus virheRuutu = new Virheilmoitus(virheteksti);
         SwingUtilities.invokeLater(virheRuutu);

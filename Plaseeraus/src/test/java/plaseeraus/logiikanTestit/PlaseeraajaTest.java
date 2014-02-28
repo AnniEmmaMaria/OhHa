@@ -10,13 +10,14 @@ import plaseeraus.logiikka.Sukupuoli;
 import plaseeraus.logiikka.Vieras;
 
 public class PlaseeraajaTest {
+
     Plaseeraaja plaseeraaja;
     ArrayList<Vieras> testilista;
     Vieras ross;
     Vieras rachel;
     Vieras joey;
     Poyta kahdenPoyta;
-    
+
     @Before
     public void setUp() {
         plaseeraaja = new Plaseeraaja();
@@ -30,19 +31,13 @@ public class PlaseeraajaTest {
         kahdenPoyta = new Poyta(2);
     }
 
-    //Jos plaseeraaja osaa lukea vieraslista.txt:n, 3. vieras on Risto Reipas
+
     @Test
-    public void tekeekoListan() {
-        ArrayList<Vieras> vierasLista = plaseeraaja.annaVieraslista();
-        Vieras ristoko = vierasLista.get(2);
-        assertEquals("Risto Reipas", ristoko.toString());
+    public void etsiikoNimellaVieraan() {
+        String nimi = "Ross Geller";
+        Vieras nimellaHaettuVieras = plaseeraaja.getVierasNimenPerusteella(nimi, testilista);
+        
+        assertEquals("Ross Geller", nimellaHaettuVieras.toString());
     }
-    
-    @Test
-            public void etsiikoNiellaVieraan()
-    
-           
-    
-    
-    
+
 }
