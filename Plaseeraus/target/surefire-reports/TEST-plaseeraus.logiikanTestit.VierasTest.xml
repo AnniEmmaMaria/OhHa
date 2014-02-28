@@ -44,7 +44,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="32"/>
     <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.7.0_51\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files (x86)\NetBeans 7.4\java\maven-nblib\netbeans-eventspy.jar test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files (x86)\NetBeans 7.4\java\maven-nblib\netbeans-eventspy.jar clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="fi"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,11 +61,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="plaseerautuuko"/>
-  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="plaseeraamatonAlussa"/>
-  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="toStringOikein"/>
-  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="sukupuoliOikein"/>
   <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="sukunimiOikein"/>
-  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="avecOikein"/>
+  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="sukupuoliOikein"/>
+  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="toStringOikein"/>
+  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="plaseeraamatonAlussa"/>
+  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="plaseerautuuko"/>
   <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="etunimiOikein"/>
+  <testcase time="0" classname="plaseeraus.logiikanTestit.VierasTest" name="avecOikein"/>
 </testsuite>
