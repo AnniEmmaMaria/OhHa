@@ -1,1 +1,13 @@
-﻿
+﻿Logiikan luokkien testit ovat pakkauksessa plaseeraus.logiikan testit luokkien mukaan nimettyinä.
+
+PLaseeraajaTest.java
+
+-Osaako plaseerata ensimmäiseksi naisen
+-Listaa naisen paikalle sallitut vieraat oikein
+-Osaako lukea annettua .txt-tiedostoa
+-
+
+
+VierasListaTest.java
+
+Luokkaa ei ole olemassakaan enää, joten testit herjaavat

@@ -42,7 +42,7 @@ public class PoydanTekija implements ActionListener {
         this.vastausKentta.setText("");
         
         //Luodaan ruutu
-        PoytaTilasto poytatilastoRuutu = new PoytaTilasto();
+        PoytaTilasto poytatilastoRuutu = new PoytaTilasto(poytalista);
         SwingUtilities.invokeLater(poytatilastoRuutu);
        
 

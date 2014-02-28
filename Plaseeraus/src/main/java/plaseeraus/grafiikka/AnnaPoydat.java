@@ -14,9 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import plaseeraus.logiikka.Poyta;
 import plaseeraus.logiikka.PoytaLista;
 
 /**

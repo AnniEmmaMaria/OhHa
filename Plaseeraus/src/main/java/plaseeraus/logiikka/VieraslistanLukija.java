@@ -1,3 +1,6 @@
+/**
+ * Tekee .txt-muotoisesta vieraslistasta Vieras-oliot
+ */
 package plaseeraus.logiikka;
 
 import java.io.File;
@@ -14,7 +17,7 @@ public class VieraslistanLukija {
     ArrayList<Vieras> listaVieraista;
 
     /**
-     * Luettava vieraslista annetaan Sen scanneria luotaessa varmistetaan
+     * Luettava vieraslista annetaan. Sen scanneria luotaessa varmistetaan
      * tekstitiedoston olemassaolo Vieraat tallennetaan ArrayListiin
      */
     public VieraslistanLukija() {
@@ -48,6 +51,7 @@ public class VieraslistanLukija {
 
     }
 
+    
     /**
      * Luo yhdestä tekstirivistä Vieras-olion etsimällä attribuutit (etu- ja
      * sukunimi, sukupuoli, avec)

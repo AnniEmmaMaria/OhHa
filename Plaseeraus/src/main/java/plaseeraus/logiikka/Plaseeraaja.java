@@ -26,10 +26,11 @@ public class Plaseeraaja {
      */
     public void plaseeraa(Poyta poyta) {
         int koko = poyta.getTuolimaara();
-        Vieras valittuIstuja = null;
+        //Koska ensimmäinen plaseerattava on nainen tehdään yksi tekomies-Vieras
+        Vieras valittuIstuja = new Vieras("teko", "mies", Sukupuoli.MIES, "");
 
         for (int tuolinInd = 0; tuolinInd < koko; tuolinInd++) {
-            ArrayList<Vieras> sallitutIstujat = listaaSallitutVieraat(valittuIstuja);
+            ArrayList<Vieras> sallitutIstujat = listaaSallitutVieraat(tuolinInd, valittuIstuja);
             valittuIstuja = arvoIstuja(sallitutIstujat);
 
             poyta.getTuoli(tuolinInd).otaIstuja(valittuIstuja);
@@ -38,53 +39,61 @@ public class Plaseeraaja {
 
     /**
      * Valitsee alkuperäiseltä vieraslistalta uudeksi listaksi ne vieraat,
-     * joiden sallitaan istua tälle tuolille.
-     *
-     * @param
-     * @return karsittu vieraslista
+     * joiden sallitaan istua tälle tuolille. Lista käydään for-loopilla läpi.
+     * Soveliaat vieraat otaantulokseen
+     * @param tuoliNro mille tuolille haetaan istuja
+     * @param edellinenIstuja oikealle puolelle jo plaseerattu vieras
+     *@return lista paikalle sallituista vieraista
      */
-    private ArrayList<Vieras> listaaSallitutVieraat(Vieras edellinenIstuja) {
+    public ArrayList<Vieras> listaaSallitutVieraat(int tuoliNro, Vieras edellinenIstuja) {
 
         ArrayList<Vieras> sallitutIstujat = new ArrayList<>();
         ArrayList<Vieras> kaikkiVieraat = annaVieraslista();
+        ArrayList<Vieras> vapaatVieraat = new ArrayList<>();
+        String edellisenAvec = edellinenIstuja.getAvec();
 
-        //Jos edellistä istujaa ei ole -> pöytä alkaa naisella
-        if (edellinenIstuja == null) {
-            sallitutIstujat = listaaVapaatNaiset(kaikkiVieraat);
+        //Plaseeratut vieraat poistetaan
+        for (Vieras vieras : kaikkiVieraat) {
+            if (vieras.onkoPlaseerattu() == false) {
+                vapaatVieraat.add(vieras);
+            }
+        }
 
-            //Jos edellinen istuja on nainen
-        } else if (edellinenIstuja.getSukupuoli() == Sukupuoli.NAINEN) {
-            String avecNimi = edellinenIstuja.getAvec();
+        //Ensimmäiseen tuoliin nainen
+        if (tuoliNro == 0) {
+            sallitutIstujat = listaaVapaatNaiset(vapaatVieraat);
 
-            if (!avecNimi.equals("")) {
-                Vieras avec = getVierasNimenPerusteella(avecNimi, kaikkiVieraat);
+        //Parilliseen tuoliin nainen
+        } else if (tuoliNro % 2 == 0) {
+            //Jos naisella on avec
+            if (!edellisenAvec.equals("")) {
+                Vieras avec = getVierasNimenPerusteella(edellisenAvec, vapaatVieraat);
                 sallitutIstujat.add(avec);
+                //jos naisella ei ole avecia
             } else {
                 sallitutIstujat = listaaVapaatMiehet(kaikkiVieraat);
             }
-
-            //Jos edellinen istuja on mies tai null (ensimmäinen tuoli)
+        //Parittomaan tuoliin mies
         } else {
-            sallitutIstujat = listaaVapaatNaiset(kaikkiVieraat);
+            sallitutIstujat = listaaVapaatNaiset(vapaatVieraat);
         }
 
         return sallitutIstujat;
+
     }
 
     /**
      * Valitsee naiset, joita ei ole vielä plaseerattu
      *
-     * @param kaikkiVieraat
-     * @return
+     * @param vapaatVieraat eli plaseeraamattomat vieraat
+     * @return Istumapaikalle sopivat naiset
      */
-    private ArrayList<Vieras> listaaVapaatNaiset(ArrayList<Vieras> kaikkiVieraat) {
+    public ArrayList<Vieras> listaaVapaatNaiset(ArrayList<Vieras> vapaatVieraat) {
         ArrayList<Vieras> vapaatNaiset = new ArrayList();
 
-        for (Vieras yksiVieras : kaikkiVieraat) {
-            if (yksiVieras.onkoPlaseerattu() == false) {
-                if (yksiVieras.getSukupuoli() == Sukupuoli.NAINEN) {
-                    vapaatNaiset.add(yksiVieras);
-                }
+        for (Vieras yksiVieras : vapaatVieraat) {
+            if (yksiVieras.getSukupuoli() == Sukupuoli.NAINEN) {
+                vapaatNaiset.add(yksiVieras);
             }
         }
         return vapaatNaiset;
@@ -93,18 +102,16 @@ public class Plaseeraaja {
     /**
      * Valitsee miehet, joita ei ole varattu avecina jollekin naiselle
      *
-     * @param kaikkiVieraat
-     * @return
+     * @param vapaatVieraat eli plaseeraamattomat vieraat
+     * @return Istumapaikalle sopivat miehet
      */
-    private ArrayList<Vieras> listaaVapaatMiehet(ArrayList<Vieras> kaikkiVieraat) {
+    public ArrayList<Vieras> listaaVapaatMiehet(ArrayList<Vieras> vapaatVieraat) {
         ArrayList<Vieras> vapaatMiehet = new ArrayList();
 
-        for (Vieras yksiVieras : kaikkiVieraat) {
-            if (yksiVieras.onkoPlaseerattu() == false) {
+        for (Vieras yksiVieras : vapaatVieraat) {
                 if (yksiVieras.getSukupuoli() == Sukupuoli.MIES && yksiVieras.getAvec().equals("")) {
                     vapaatMiehet.add(yksiVieras);
                 }
-            }
         }
         return vapaatMiehet;
     }
@@ -119,7 +126,7 @@ public class Plaseeraaja {
 
         int listanKoko = sallitutIstujat.size();
 
-        //random arpoja arpoo kokonaisluvun väliltä [0,listanKoko[
+        //random arpoja arpoo kokonaisluvun väliltä[0,listanKoko[
         int arvottuLuku = arpoja.nextInt(listanKoko);
 
         //palautetaan tällä luvulla esiintyvä sallittu Vieras

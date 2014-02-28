@@ -1,2 +1,8 @@
-Käyttöohjeet
+﻿PLASEERAAJA
+
+Ohjelma hoitaa puolestasi pöytäjuhlien kinkkisimmän osa,plsaeeraamisen eli istumajärjestyksen teoon. 
+
+Ensin ohjelmalle kerrotaan, montako istumapaikkaa juhlien pöydissä on. Kun kaikki pöydät on listattu, Plaseeraaja jakaa vieraat istumapaikoille niin, että nainen on aina miehen oikealla puolella ja avecit ovat vierekkäin.
+
+Vieraiden valitsemista (ja testausta) helpottaa, että vieraslista on päätetty etukäteen (vieraslista.txt). 
 

@@ -29,11 +29,18 @@ Ongelmia:
 4. 
 Tulos kuvataan pöytäkarttana
 
-Voiko karttaa muuttaa?
-
-
-
 Ohjelman voisi ensin toteutta hyvin suppeana niin, että se vain arpoo ihmiset pöytiin mies-nainen-mies -periaatteella ja lisätä plaseerauksen käytännön järkevyyttä sen mukaan kuin ehtii.
 
 
+
+RAKENNEKUVAUS:
+
+Alussa on tyhjä PoytaLista.
+Käyttäjän syötteen mukaan lisätään Poyta-olioita, jotka sisältävät listat Tuoli-olioita.
+Poyta-oliot lisätään PoytaListaan.
+
+Luodaan Plaseeraaja johon PoytaLista sisältyy.
+Plaseeraaja luo VieraslistanLukijan.
+Vieraslistanlukija muokkaa txt-tiedostosta lukemastaan Vieras-olioita.
+Plaseeraaja istuttaa Vieras-oliot Tuoli-olioille 
 
