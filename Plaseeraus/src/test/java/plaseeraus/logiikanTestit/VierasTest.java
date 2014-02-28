@@ -10,27 +10,11 @@ import plaseeraus.logiikka.Sukupuoli;
 import plaseeraus.logiikka.Vieras;
 
 public class VierasTest {
-
     Vieras chandler;
-
-    public VierasTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     @Before
     public void setUp() {
         chandler = new Vieras("Chandler", "Bing", Sukupuoli.MIES, "Monica Geller");
-    }
-
-    @After
-    public void tearDown() {
     }
 
     //Toimivatko getterit ja toString oikein?

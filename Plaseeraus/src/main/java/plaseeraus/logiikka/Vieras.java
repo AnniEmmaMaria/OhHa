@@ -1,5 +1,9 @@
 package plaseeraus.logiikka;
 
+/**
+ * Vieraslistalla oleva ihminen. Nimi, sukunimi ja mahd. avecin nimi
+ * @author Anni Jokiniemi
+ */
 public class Vieras {
     private final String etunimi;
     private final String sukunimi;
@@ -15,7 +19,7 @@ public class Vieras {
         this.avec = avec;
     }
     
-    //getterit nimi-, sukupuoli- ja avectiedoille
+
     public String getEtunimi(){
         return this.etunimi;
     }
@@ -30,8 +34,7 @@ public class Vieras {
     }
     
     /**
-     * toString palauttaa vain vieraan nimen
-     * @return 
+     * @return palkkä vieraan nimi
      */
     @Override
     public String toString(){

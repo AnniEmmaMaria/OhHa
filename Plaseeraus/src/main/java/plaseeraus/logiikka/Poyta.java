@@ -2,6 +2,10 @@ package plaseeraus.logiikka;
 
 import java.util.ArrayList;
 
+/**
+ * Poyta sisältää listana tuolinsa, joille vieraat voi istuttaa
+ * @author Anni Jokiniemi
+ */
 public class Poyta {
 
     private final int tuolimaara;
@@ -12,13 +16,14 @@ public class Poyta {
         this.tuolit = new ArrayList<>();
     }
 
+    
     public int getTuolimaara() {
         return this.tuolimaara;
     }
 
     public Tuoli getTuoli(int tuolinNro) {
-        Tuoli penkki = this.tuolit.get(tuolinNro);
-        return penkki;
+        Tuoli tuoli = this.tuolit.get(tuolinNro);
+        return tuoli;
     }
 
     public ArrayList<Tuoli> getTuolilista() {

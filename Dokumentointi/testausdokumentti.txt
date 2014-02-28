@@ -5,8 +5,24 @@ PLaseeraajaTest.java
 -Osaako plaseerata ensimmäiseksi naisen
 -Listaa naisen paikalle sallitut vieraat oikein
 -Osaako lukea annettua .txt-tiedostoa
--
 
+
+PoytaTest.java
+
+-getterit tuolimäärän, tuolin ja tuolilistan hakuun
+-tuolin lisääminen pöytään
+
+
+TuoliTest.java
+
+-Tuolille voi istua
+-toString antaa Istujan nimen
+
+
+VierasTest.java
+
+-gettereiden testaukset
+-onnistuuko plaseerata (true/false -muuttuu)
 
 VierasListaTest.java
 

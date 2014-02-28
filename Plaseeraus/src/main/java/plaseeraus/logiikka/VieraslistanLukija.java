@@ -11,7 +11,6 @@ import javax.swing.SwingUtilities;
 import plaseeraus.grafiikka.Virheilmoitus;
 
 public class VieraslistanLukija {
-
     File vieraslista;
     Scanner listanLukija;
     ArrayList<Vieras> listaVieraista;
@@ -25,7 +24,7 @@ public class VieraslistanLukija {
         try {
             listanLukija = new Scanner(vieraslista);
         } catch (FileNotFoundException e) {
-            System.out.println("Tiedostoa ei löytynyt");
+            virheilmoitus("tiedostoa ei ole");
         }
         this.listaVieraista = new ArrayList<>();
     }
@@ -48,7 +47,6 @@ public class VieraslistanLukija {
             Vieras uusiVieras = luoTekstirivistaVierasOlio(rivi);
             this.listaVieraista.add(uusiVieras);
         }
-
     }
 
     
@@ -93,7 +91,7 @@ public class VieraslistanLukija {
     }
 
     //Virheilmoituksen laukaisumetodi
-    public void virheilmoitus(String aiheuttaja) {
+    private void virheilmoitus(String aiheuttaja) {
         String virheteksti = "Vieraslistassa virhe kohdassa " + aiheuttaja +"";
         Virheilmoitus virheRuutu = new Virheilmoitus(virheteksti);
         SwingUtilities.invokeLater(virheRuutu);
